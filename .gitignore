@@ -1,0 +1,14 @@
+# Archivos y cachés del sistema operativo (Windows, macOS, Linux)
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+
+# Configuraciones locales de editores de código (VS Code, etc.)
+.vscode/
+.idea/
+*.suo
+*.swp
+
+# Archivos de depuración o logs (por si acaso)
+*.log
