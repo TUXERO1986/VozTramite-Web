@@ -1,0 +1,381 @@
+/* =========================================================================
+   VozTrámite — Componentes UI
+   13 componentes del sistema de diseño. Cada regla de color cita su rol
+   60-30-10 y, cuando aplica, su ratio de contraste verificado.
+   ========================================================================= */
+
+.vt-icon { flex-shrink: 0; }
+
+/* ---- Cabecera de la app (60% canvas + 30% marca) ---------------------- */
+.vt-header {
+  background: var(--color-brand-primary); /* 30% */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  min-height: var(--tap-min);
+}
+.vt-header__logo {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--fs-h3); font-weight: var(--fw-h2);
+}
+.vt-header__logo-glifo { display: inline-flex; color: #fff; }
+.vt-header__acciones { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.vt-header__btn {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  min-height: var(--tap-min); padding: var(--space-2) var(--space-3);
+  background: rgba(255,255,255,0.12); color: #fff; border: none; border-radius: var(--radius-button);
+  font-size: var(--fs-caption); font-weight: var(--fw-caption); text-decoration: none; cursor: pointer;
+}
+.vt-header__btn:hover { background: rgba(255,255,255,0.22); }
+
+/* ---- 1. Botón HABLAR ----------------------------------------------------
+   Decisión de accesibilidad: el relleno SIEMPRE es --color-action-voice-deep
+   (#0369A1, 5.93:1 con texto blanco). --color-action-voice (#0284C7) solo
+   se usa en iconos/bordes/ondas (no textual, mínimo 3:1). */
+.vt-voice-wrap { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+
+.vt-voice-btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  width: 100%;
+  min-height: var(--tap-voice);
+  border-radius: var(--radius-button);
+  border: 3px solid transparent;
+  background: var(--color-action-voice-deep);
+  color: #fff;
+  font-size: var(--fs-button); font-weight: var(--fw-button); letter-spacing: var(--ls-button);
+  cursor: pointer;
+  overflow: visible;
+}
+.vt-voice-btn--desktop { min-height: var(--tap-voice-desktop); max-width: 420px; }
+.vt-voice-btn .vt-icon { color: #fff; }
+.vt-voice-btn[data-state="reposo"] { animation: vt-pulso 2.4s ease-in-out infinite; }
+
+.vt-voice-btn__waves { position: absolute; inset: -10px; pointer-events: none; display: none; }
+.vt-voice-btn__waves span {
+  position: absolute; inset: 0; border-radius: var(--radius-button);
+  border: 2px solid var(--color-action-voice); opacity: 0;
+}
+
+.vt-voice-btn[data-state="escucha"] {
+  background: #fff;
+  border-color: var(--color-status-listening);
+  color: var(--color-status-listening);
+  animation: none;
+}
+.vt-voice-btn[data-state="escucha"] .vt-icon { color: var(--color-status-listening); }
+.vt-voice-btn[data-state="escucha"] .vt-voice-btn__waves { display: block; }
+.vt-voice-btn[data-state="escucha"] .vt-voice-btn__waves span { animation: vt-onda 1.6s ease-out infinite; }
+.vt-voice-btn[data-state="escucha"] .vt-voice-btn__waves span:nth-child(2) { animation-delay: 0.4s; }
+.vt-voice-btn[data-state="escucha"] .vt-voice-btn__waves span:nth-child(3) { animation-delay: 0.8s; }
+
+.vt-voice-btn[data-state="procesando"] {
+  background: var(--color-canvas-subtle); color: var(--color-text-paragraph); border-color: transparent;
+  animation: none;
+}
+.vt-voice-btn[data-state="procesando"] .vt-icon { color: var(--color-text-paragraph); }
+
+.vt-voice-btn[disabled],
+.vt-voice-btn[data-state="deshabilitado"] {
+  background: #E2E8F0; color: #64748B; animation: none; cursor: not-allowed;
+}
+.vt-voice-btn[data-state="deshabilitado"] .vt-icon { color: #64748B; }
+
+@keyframes vt-pulso {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(3, 105, 161, 0.35); }
+  50% { box-shadow: 0 0 0 10px rgba(3, 105, 161, 0); }
+}
+@keyframes vt-onda {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+/* Movimiento reducido: ondas/pulso se sustituyen por borde ámbar estático (ya sin animación por base.css) */
+
+.vt-voice-razon { color: var(--color-text-paragraph); text-align: center; max-width: 32ch; }
+
+/* ---- 2 / 3. Botones --------------------------------------------------- */
+.vt-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-button);
+  font-size: var(--fs-button); font-weight: var(--fw-button); letter-spacing: var(--ls-button);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+}
+.vt-btn--lg { min-height: 56px; }
+.vt-btn--xl { min-height: 64px; }
+.vt-btn--base { min-height: var(--tap-min); }
+
+.vt-btn--primario { background: var(--color-action-voice-deep); color: #fff; } /* 10% acento, relleno accesible */
+.vt-btn--exito { background: var(--color-status-success); color: #fff; }       /* CONFIRMAR, 4.52:1 */
+.vt-btn--secundario { background: #fff; color: var(--color-brand-primary); border-color: var(--color-brand-primary); } /* CORREGIR */
+.vt-btn--fantasma { background: transparent; color: var(--color-brand-primary); text-decoration: underline; }
+.vt-btn--peligro { background: var(--color-status-error); color: #fff; }
+
+.vt-btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+.vt-btn + .vt-btn { margin-top: 0; }
+
+.vt-acciones { display: flex; flex-direction: column; gap: var(--tap-gap-min); }
+.vt-acciones--fila { flex-direction: row; flex-wrap: wrap; }
+
+/* ---- 4. Tarjeta conversacional ------------------------------------------ */
+.vt-card {
+  background: var(--color-surface-pure); /* 60% dominante */
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.vt-card--asistente { border-left: 4px solid var(--color-brand-primary); }
+.vt-card--usuario { border-left: 4px solid var(--color-action-voice); background: var(--color-canvas-subtle); }
+
+.vt-subtitulo { margin: 0; }
+.vt-word { transition: background var(--transition-fast); border-radius: 4px; padding: 0 1px; }
+.vt-word.is-active { background: var(--bg-info); }
+
+/* ---- 5. Campo de transcripción (eco) ------------------------------------ */
+.vt-transcript {
+  background: var(--color-canvas-subtle);
+  border: 1px solid #E2E8F0;
+  border-radius: var(--radius-card);
+  padding: var(--space-3) var(--space-4);
+}
+.vt-transcript__etiqueta { display: block; margin-bottom: var(--space-1); color: var(--color-text-paragraph); }
+.vt-transcript__texto { min-height: 1.5em; }
+.vt-transcript--privado .vt-transcript__texto { letter-spacing: 0.3em; color: var(--color-text-paragraph); }
+
+/* ---- 6. Indicador de progreso ------------------------------------------- */
+.vt-progreso-mobile { display: flex; flex-direction: column; gap: var(--space-2); }
+.vt-progreso-mobile__barra { display: flex; gap: var(--space-1); }
+.vt-progreso-mobile__seg {
+  flex: 1; height: 6px; border-radius: var(--radius-chip);
+  background: #E2E8F0;
+}
+.vt-progreso-mobile__seg.is-completo { background: var(--color-brand-primary); }
+
+.vt-progreso-desktop { display: flex; flex-direction: column; gap: var(--space-1); }
+.vt-progreso-desktop__item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-3); border-radius: var(--radius-button);
+  color: var(--color-text-paragraph);
+}
+.vt-progreso-desktop__marca {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #E2E8F0; color: var(--color-text-paragraph);
+  font-weight: var(--fw-button); flex-shrink: 0;
+}
+.vt-progreso-desktop__item.is-completo .vt-progreso-desktop__marca { background: var(--color-status-success); color: #fff; }
+.vt-progreso-desktop__item.is-actual { background: var(--bg-info); }
+.vt-progreso-desktop__item.is-actual .vt-progreso-desktop__marca { background: var(--color-brand-primary); color: #fff; }
+.vt-progreso-desktop__item.is-actual .vt-progreso-desktop__texto { color: var(--color-text-headline); font-weight: var(--fw-h3); }
+
+/* ---- 7. Mensajes de estado ----------------------------------------------- */
+.vt-mensaje {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+.vt-mensaje .vt-icon { margin-top: 2px; }
+.vt-mensaje--exito { background: var(--bg-success); color: #14532D; }
+.vt-mensaje--exito .vt-icon { color: var(--color-status-success); }
+.vt-mensaje--error { background: var(--bg-error); color: #7F1D1D; }
+.vt-mensaje--error .vt-icon { color: var(--color-status-error); }
+.vt-mensaje--advertencia { background: var(--bg-warning); color: #78350F; }
+.vt-mensaje--advertencia .vt-icon { color: var(--color-status-listening); }
+.vt-mensaje--info { background: var(--bg-info); color: #0C4A6E; }
+.vt-mensaje--info .vt-icon { color: var(--color-brand-primary); }
+.vt-mensaje__texto p { color: inherit; }
+.vt-mensaje__texto .text-h3 { color: inherit; }
+
+/* ---- 8. Chips de estado ---------------------------------------------------- */
+.vt-chip {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  min-height: 32px;
+  border-radius: var(--radius-chip);
+  font-size: var(--fs-caption); font-weight: var(--fw-caption); letter-spacing: var(--ls-caption);
+  background: #E2E8F0; color: var(--color-text-paragraph);
+}
+.vt-chip .vt-icon { width: 18px; height: 18px; }
+.vt-chip--success { background: var(--bg-success); color: #14532D; }
+.vt-chip--warning { background: var(--bg-warning); color: #78350F; }
+.vt-chip--info { background: var(--bg-info); color: #0C4A6E; }
+.vt-chip--neutral { background: #E2E8F0; color: #334155; }
+.vt-chip--escucha { background: var(--bg-warning); color: var(--color-status-listening); font-size: var(--fs-caption); }
+
+.vt-chips-fila { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+/* ---- 9. Barra de navegación inferior (mobile) -------------------------------- */
+.vt-bottom-nav {
+  position: sticky; bottom: 0;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #E2E8F0;
+  padding: var(--space-1) var(--space-1) max(var(--space-1), env(safe-area-inset-bottom));
+}
+.vt-bottom-nav__item {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  min-height: var(--tap-min);
+  color: var(--color-text-paragraph);
+  text-decoration: none;
+  font-size: var(--fs-caption); font-weight: var(--fw-caption);
+  border-radius: var(--radius-button);
+}
+.vt-bottom-nav__item[aria-current="page"] { color: var(--color-brand-primary); }
+
+/* ---- 10. Hoja inferior (bottom sheet) ------------------------------------------ */
+.vt-sheet-backdrop {
+  position: fixed; inset: 0; background: rgba(15, 23, 42, 0.5); z-index: 90;
+}
+.vt-sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 91;
+  height: 45vh; min-height: 280px;
+  background: var(--color-surface-pure);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.18);
+  display: flex; flex-direction: column;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+.vt-sheet[hidden],
+.vt-sheet-backdrop[hidden] { display: none; }
+.vt-sheet__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-3); }
+.vt-sheet__cerrar {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  min-width: var(--tap-min); min-height: var(--tap-min);
+  justify-content: center;
+  background: var(--color-canvas-subtle); border: none; border-radius: var(--radius-button); cursor: pointer;
+  color: var(--color-text-paragraph);
+}
+.vt-sheet__cuerpo { display: flex; flex-direction: column; gap: var(--space-3); }
+
+/* ---- 11. Baldosas de icono squircle ----------------------------------------------- */
+.vt-tile-tarjeta {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  text-align: center;
+}
+.vt-tile {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px;
+  background: var(--color-canvas-subtle); /* 60% dominante */
+  border-radius: var(--radius-squircle);
+}
+.vt-tile__glifo { color: var(--color-brand-primary); } /* 30% secundario */
+.vt-tile__destello {
+  position: absolute; top: -4px; right: -4px;
+  width: 14px; height: 14px;
+  background: var(--color-action-voice); /* 10% acento */
+  clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+}
+.vt-tile__etiqueta { font-size: var(--fs-caption); font-weight: var(--fw-caption); color: var(--color-text-headline); }
+
+/* ---- 12. Reproductor de audio del asistente --------------------------------------- */
+.vt-audio {
+  display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap;
+  background: var(--color-canvas-subtle);
+  border-radius: var(--radius-card);
+  padding: var(--space-2) var(--space-3);
+}
+.vt-audio__btn {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  min-height: var(--tap-min); padding: 0 var(--space-3);
+  background: #fff; border: 1px solid #E2E8F0; border-radius: var(--radius-button);
+  color: var(--color-text-headline); cursor: pointer; font-size: var(--fs-caption); font-weight: var(--fw-caption);
+}
+.vt-audio__velocidad select {
+  min-height: var(--tap-min); border-radius: var(--radius-button); border: 1px solid #E2E8F0;
+  padding: 0 var(--space-2); font-size: var(--fs-caption); font-weight: var(--fw-caption); background: #fff; color: var(--color-text-headline);
+}
+
+/* ---- 13. Contador de intentos --------------------------------------------------------- */
+.vt-intentos { color: var(--color-text-paragraph); }
+
+/* ---- Bloques auxiliares comunes a varias pantallas ------------------------------------- */
+.vt-lista-check { display: flex; flex-direction: column; gap: var(--space-2); }
+.vt-lista-check li { display: flex; align-items: center; gap: var(--space-2); color: var(--color-text-headline); }
+.vt-lista-check .vt-icon { color: var(--color-status-success); }
+
+.vt-opcion {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  width: 100%;
+  min-height: var(--tap-voice);
+  background: #fff; border: 2px solid #E2E8F0; border-radius: var(--radius-card);
+  padding: var(--space-4);
+  text-align: left; cursor: pointer;
+}
+.vt-opcion:hover { border-color: var(--color-brand-primary); }
+.vt-opcion--recomendada { border-color: var(--color-brand-primary); background: var(--bg-info); }
+.vt-opcion__glifo { color: var(--color-brand-primary); flex-shrink: 0; }
+.vt-opcion__texto { display: flex; flex-direction: column; gap: 2px; }
+
+.vt-requisito { display: flex; align-items: center; gap: var(--space-3); }
+.vt-requisito .vt-icon { color: var(--color-brand-primary); flex-shrink: 0; }
+
+.vt-termino-subrayado {
+  background: none; border: none; padding: 0; color: inherit; cursor: pointer;
+  font: inherit; text-decoration: underline dotted; text-decoration-color: var(--color-brand-primary);
+  text-underline-offset: 3px;
+}
+
+.vt-codigo-orientacion {
+  font-size: var(--fs-h1); font-weight: var(--fw-h1); color: var(--color-text-headline);
+  letter-spacing: 0.12em;
+}
+
+.vt-dato-grupo { letter-spacing: 0.08em; }
+
+.vt-visor {
+  background: var(--color-canvas-subtle); border: 1px dashed #CBD5E1; border-radius: var(--radius-card);
+  padding: var(--space-6); text-align: center; color: var(--color-text-paragraph);
+}
+
+.vt-tabla { width: 100%; border-collapse: collapse; }
+.vt-tabla th, .vt-tabla td { text-align: left; padding: var(--space-3); border-bottom: 1px solid #E2E8F0; }
+.vt-tabla th { font-size: var(--fs-caption); font-weight: var(--fw-caption); color: var(--color-text-paragraph); }
+
+.vt-interruptor { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: var(--tap-min); }
+.vt-interruptor__control {
+  position: relative; width: 52px; height: 30px; border-radius: var(--radius-chip);
+  background: #CBD5E1; border: none; cursor: pointer; flex-shrink: 0;
+}
+.vt-interruptor__control::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%;
+  background: #fff; transition: transform var(--transition-fast);
+}
+.vt-interruptor__control[aria-checked="true"] { background: var(--color-brand-primary); }
+.vt-interruptor__control[aria-checked="true"]::after { transform: translateX(22px); }
+
+.vt-segmento-paquetes { display: flex; gap: var(--space-1); }
+.vt-segmento-paquetes__seg { flex: 1; height: 10px; border-radius: var(--radius-chip); background: #E2E8F0; }
+.vt-segmento-paquetes__seg.is-enviado { background: var(--color-status-success); }
+.vt-segmento-paquetes__seg.is-enviando { background: var(--color-action-voice); animation: vt-raya 1.2s linear infinite; }
+.vt-segmento-paquetes__seg.is-pausado { background: repeating-linear-gradient(45deg, #E2E8F0, #E2E8F0 6px, #CBD5E1 6px, #CBD5E1 12px); }
+@keyframes vt-raya { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+
+.vt-debug-panel {
+  position: fixed; left: var(--space-3); bottom: var(--space-3); z-index: 200;
+  background: #0F172A; color: #fff; padding: var(--space-3); border-radius: var(--radius-card);
+  display: flex; flex-direction: column; gap: var(--space-2); max-width: 260px;
+}
+.vt-debug-row { display: flex; flex-wrap: wrap; gap: var(--space-1); }
+.vt-debug-btn { background: #1E293B; color: #fff; border: 1px solid #334155; border-radius: var(--radius-button); padding: var(--space-1) var(--space-2); font-size: 0.75rem; cursor: pointer; }
+
+.vt-checkbox { display: flex; align-items: center; gap: var(--space-3); min-height: var(--tap-min); cursor: pointer; }
+.vt-checkbox input { width: 24px; height: 24px; accent-color: var(--color-brand-primary); flex-shrink: 0; }
+.vt-checkbox span { color: var(--color-text-headline); }
+
+/* Fila que aparece/ se corrige en el panel derecho de D04/D05 */
+.vt-fila-flash { animation: vt-flash 300ms ease; border-radius: var(--radius-button); }
+@keyframes vt-flash {
+  from { background: var(--bg-success); }
+  to { background: transparent; }
+}

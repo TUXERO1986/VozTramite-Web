@@ -1,0 +1,158 @@
+/* =========================================================================
+   VozTrámite — Reset, tipografía base y utilidades
+   ========================================================================= */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-paragraph);
+  background: var(--color-canvas-subtle);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+button { font-family: inherit; }
+
+/* El atributo [hidden] debe ganar siempre, aunque la clase del elemento
+   también fije `display` (p. ej. .vt-sheet, .vt-acciones como <form>). */
+[hidden] { display: none !important; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, figure { margin: 0; }
+
+a { color: var(--color-brand-primary); text-decoration: underline; }
+
+/* ---- Tipografía semántica ------------------------------------------- */
+.text-display {
+  font-size: var(--fs-display); font-weight: var(--fw-display);
+  line-height: var(--lh-display); letter-spacing: var(--ls-display);
+  color: var(--color-text-headline);
+}
+.text-h1 {
+  font-size: var(--fs-h1); font-weight: var(--fw-h1);
+  line-height: var(--lh-h1); letter-spacing: var(--ls-h1);
+  color: var(--color-text-headline);
+}
+.text-h2 {
+  font-size: var(--fs-h2); font-weight: var(--fw-h2);
+  line-height: var(--lh-h2); letter-spacing: var(--ls-h2);
+  color: var(--color-text-headline);
+}
+.text-h3 {
+  font-size: var(--fs-h3); font-weight: var(--fw-h3);
+  line-height: var(--lh-h3); letter-spacing: var(--ls-h3);
+  color: var(--color-text-headline);
+}
+.text-body-lg {
+  font-size: var(--fs-body-lg); font-weight: var(--fw-body-lg);
+  line-height: var(--lh-body-lg); letter-spacing: var(--ls-body-lg);
+  color: var(--color-text-headline);
+}
+.text-body {
+  font-size: var(--fs-body); font-weight: var(--fw-body);
+  line-height: var(--lh-body); letter-spacing: var(--ls-body);
+  color: var(--color-text-paragraph);
+}
+.text-caption {
+  font-size: var(--fs-caption); font-weight: var(--fw-caption);
+  line-height: var(--lh-caption); letter-spacing: var(--ls-caption);
+  color: var(--color-text-paragraph);
+}
+
+/* Párrafos: ancho de lectura cómodo, nunca justificado a la derecha */
+.text-body, .text-body-lg {
+  max-width: 70ch;
+  text-align: left;
+}
+
+/* ---- Foco visible (2.4.7) — nunca se desactiva sin reemplazo -------- */
+:focus { outline: none; }
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: 4px;
+}
+
+/* ---- Enlace "saltar bloques" (2.4.1) --------------------------------- */
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  background: var(--color-brand-primary);
+  color: #fff;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-button);
+  font-weight: var(--fw-button);
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus-visible {
+  top: var(--space-4);
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ---- Utilidades ------------------------------------------------------ */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.u-flex { display: flex; }
+.u-flex-col { display: flex; flex-direction: column; }
+.u-items-center { align-items: center; }
+.u-justify-between { justify-content: space-between; }
+.u-gap-1 { gap: var(--space-1); }
+.u-gap-2 { gap: var(--space-2); }
+.u-gap-3 { gap: var(--space-3); }
+.u-gap-4 { gap: var(--space-4); }
+
+/* ---- Movimiento reducido (2.3.3) -------------------------------------
+   Aplica tanto por preferencia de SO como por ajuste forzado del usuario
+   (data-motion="reducido", ver js/a11y.js) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root[data-motion="reducido"] *,
+:root[data-motion="reducido"] *::before,
+:root[data-motion="reducido"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* ---- Contenedor raíz de pantalla --------------------------------------- */
+#app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estado vacío de carga (nunca debería durar) */
+.app-loading {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-paragraph);
+}
