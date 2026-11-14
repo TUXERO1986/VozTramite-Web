@@ -1,0 +1,122 @@
+/* =========================================================================
+   VozTrámite — Design Tokens
+   Paleta 60-30-10 + escala tipográfica + espaciado + radios + objetivos táctiles.
+   No cambiar estos valores: están verificados contra WCAG 2.1 AA.
+   ========================================================================= */
+
+:root {
+  /* ---- 60% dominante: superficies ---------------------------------- */
+  --color-surface-pure: #FFFFFF;   /* 60% — tarjetas, lienzos de diálogo */
+  --color-canvas-subtle: #F8FAFC;  /* 60% — fondo general de la app */
+
+  /* ---- 30% secundario: marca y texto -------------------------------- */
+  --color-brand-primary: #0E4E8E;  /* 30% — cabeceras, nav, anillo de foco. 6.37:1 sobre blanco */
+  --color-text-headline: #0F172A;  /* 30% — títulos, preguntas, DNI. 17.5:1 sobre blanco (≥7:1 requerido) */
+  --color-text-paragraph: #475569; /* 30% — descripciones, metadatos. 7.3:1 sobre blanco (≥4.5:1 requerido) */
+
+  /* ---- 10% acento y estados ------------------------------------------
+     Decisión de accesibilidad (documentada también en components.css):
+     el brief original es contradictorio sobre el botón HABLAR. Se resuelve
+     a favor del contraste: #0369A1 (Cian Profundo) es el ÚNICO relleno de
+     texto/botón porque da 5.93:1 con blanco; #0284C7 (Cian Vocal) se reserva
+     para iconos, bordes y ondas (3.91:1, cumple el mínimo 3:1 de componentes
+     no textuales pero NO el 4.5:1 de texto). */
+  --color-action-voice: #0284C7;      /* 10% — SOLO iconos, bordes, ondas. 3.91:1 sobre blanco */
+  --color-action-voice-deep: #0369A1; /* 10% — relleno del botón HABLAR + texto blanco. 5.93:1 */
+  --color-status-success: #15803D;    /* 10% — éxito. 4.52:1 sobre blanco con texto */
+  --color-status-error: #B91C1C;      /* 10% — error. 6.08:1 sobre blanco con texto */
+  --color-status-listening: #B45309;  /* 10% — escucha activa. 4.52:1 sobre blanco */
+
+  /* ---- Fondos de mensaje de estado (10%, uso en bloque, no en texto) */
+  --bg-success: #DCFCE7;
+  --bg-error: #FEE2E2;
+  --bg-warning: #FEF3C7;
+  --bg-info: #E0F2FE;
+
+  /* Texto sobre blanco puro para componentes de acento */
+  --color-on-accent: #FFFFFF;
+
+  /* ---- Tipografía: Inter, escala en rem sobre base 16px ------------- */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-display: 2.3125rem;  /* 37px — bienvenida, título de portal */
+  --fs-h1: 1.8125rem;       /* 29px — nombre del trámite */
+  --fs-h2: 1.5rem;          /* 24px — encabezado de fase/paso */
+  --fs-h3: 1.25rem;         /* 20px — pregunta del asistente */
+  --fs-body-lg: 1.1875rem;  /* 19px — eco de transcripción */
+  --fs-body: 1.0625rem;     /* 17px — instrucciones, notas */
+  --fs-button: 1rem;        /* 16px — etiquetas de CTA */
+  --fs-caption: 0.9375rem;  /* 15px — estados técnicos, badges (nunca info crítica) */
+
+  --fw-display: 900;
+  --fw-h1: 800;
+  --fw-h2: 700;
+  --fw-h3: 600;
+  --fw-body-lg: 500;
+  --fw-body: 400;
+  --fw-button: 800;
+  --fw-caption: 700;
+
+  --lh-display: 1.20;
+  --lh-h1: 1.25;
+  --lh-h2: 1.30;
+  --lh-h3: 1.40;
+  --lh-body-lg: 1.50;
+  --lh-body: 1.55;
+  --lh-button: 1.20;
+  --lh-caption: 1.30;
+
+  --ls-display: -0.03em;
+  --ls-h1: -0.02em;
+  --ls-h2: -0.01em;
+  --ls-h3: 0em;
+  --ls-body-lg: 0.01em;
+  --ls-body: 0.02em;
+  --ls-button: 0.04em;
+  --ls-caption: 0.05em;
+
+  /* ---- Espaciado (escala de 4px) ------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- Radios --------------------------------------------------------- */
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --radius-squircle: 20px; /* baldosas de icono */
+  --radius-chip: 999px;
+
+  /* ---- Objetivos táctiles --------------------------------------------- */
+  --tap-min: 48px;          /* todo elemento interactivo */
+  --tap-voice: 56px;        /* botón HABLAR en mobile */
+  --tap-voice-desktop: 64px;/* botón HABLAR en desktop */
+  --tap-gap-min: 8px;       /* separación mínima entre controles contiguos */
+
+  /* ---- Foco visible ----------------------------------------------------- */
+  --focus-ring: 3px solid var(--color-brand-primary);
+  --focus-offset: 2px;
+
+  /* ---- Sombra mínima (tarjetas) ------------------------------------------ */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 1px rgba(15, 23, 42, 0.04);
+
+  /* ---- Transiciones (desactivadas por completo con reduced motion) ------ */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+/* Alto contraste opcional (ajustes de accesibilidad, js/a11y.js) */
+:root[data-contrast="alto"] {
+  --color-text-paragraph: #1E293B; /* sube de 7.3:1 a ~14.9:1 */
+  --color-canvas-subtle: #FFFFFF;
+  --shadow-card: 0 0 0 1px rgba(15, 23, 42, 0.35);
+}
+
+/* Escalado de letra: tres niveles (1.4.4, zoom sin pérdida de contenido) */
+:root[data-text-size="normal"] { font-size: 100%; }
+:root[data-text-size="grande"] { font-size: 112.5%; }
+:root[data-text-size="muy-grande"] { font-size: 125%; }

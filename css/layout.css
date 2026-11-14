@@ -1,0 +1,85 @@
+/* =========================================================================
+   VozTrámite — Layouts
+   Mobile: flujo vertical de foco exclusivo (base, funciona desde 320px).
+   Desktop (≥1024px, pensado para 1440×900): grid de 12 columnas, 3 zonas.
+   ========================================================================= */
+
+#app-root { display: flex; flex-direction: column; min-height: 100vh; }
+
+.vt-main {
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Pantallas que necesitan todo el ancho (índice, componentes, desktop).
+   Selector compuesto a propósito: así gana siempre sobre la regla `.vt-main`
+   de @media (min-width:1024px) más abajo, sin importar el orden en la hoja. */
+.vt-main.vt-main--ancho { max-width: 900px; }
+.vt-main.vt-main--escritorio { max-width: none; padding: 0; }
+
+/* Zona del pulgar: el botón HABLAR queda al final del flujo mobile, cerca
+   del borde inferior donde cae el pulgar en uso con una sola mano. */
+.vt-zona-pulgar { margin-top: auto; display: flex; flex-direction: column; gap: var(--space-3); }
+
+/* ---- Índice de pantallas (ruta "#/") ------------------------------------- */
+.vt-indice__grupo { display: flex; flex-direction: column; gap: var(--space-2); }
+.vt-indice__lista { display: flex; flex-direction: column; gap: var(--space-1); }
+.vt-indice__lista a {
+  display: flex; align-items: center; gap: var(--space-3);
+  min-height: var(--tap-min);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-button);
+  background: var(--color-surface-pure);
+  box-shadow: var(--shadow-card);
+  text-decoration: none; color: var(--color-text-headline);
+}
+.vt-indice__lista a:hover { outline: 1px solid var(--color-brand-primary); }
+.vt-indice__id {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; padding: 2px var(--space-2);
+  background: var(--color-canvas-subtle); color: var(--color-brand-primary);
+  border-radius: var(--radius-chip);
+  font-size: var(--fs-caption); font-weight: var(--fw-caption);
+}
+
+/* ---- Grid de muestra de componentes -------------------------------------- */
+.vt-muestra__seccion { display: flex; flex-direction: column; gap: var(--space-3); }
+.vt-muestra__fila { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: flex-start; }
+.vt-muestra__tiles { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+@media (min-width: 1024px) {
+  .vt-main { max-width: 640px; padding: var(--space-6) var(--space-4); }
+  .vt-main.vt-main--ancho { max-width: 1100px; }
+  .vt-main.vt-main--escritorio { max-width: none; padding: 0; }
+
+  .vt-voice-btn--mobile { max-width: 480px; margin: 0 auto; }
+
+  /* ---- Grid de 12 columnas, 3 zonas --------------------------------------- */
+  .vt-desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-6);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+    align-items: start;
+  }
+  .vt-desktop-grid__izq { grid-column: span 3; }
+  .vt-desktop-grid__centro { grid-column: span 6; }
+  .vt-desktop-grid__der { grid-column: span 3; }
+
+  .vt-desktop-grid__izq,
+  .vt-desktop-grid__der { position: sticky; top: var(--space-6); }
+
+  /* El botón HABLAR crece en desktop */
+  .vt-voice-btn--desktop { width: 100%; }
+}
+
+/* A 320px de ancho (mobile mínimo) todo cabe en una sola columna sin scroll
+   horizontal: ya es el comportamiento por defecto de .vt-main antes de 1024px. */
