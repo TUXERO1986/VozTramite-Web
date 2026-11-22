@@ -1,0 +1,1634 @@
+[
+ {
+  "id": "HU-001",
+  "nombre": "Modo de baja conectividad para optimización de recursos.",
+  "desc": "Como usuario en una zona con baja señal quiero que la plataforma cargue una versión ligera para poder realizar mis trámites de manera fluida a pesar de tener una conexión de internet inestable o lenta.",
+  "ca": [
+   [
+    "CA-01",
+    "La interfaz debe detectar automáticamente si la velocidad de red es baja y ofrecer la opción de activar el modo ligero o de texto."
+   ],
+   [
+    "CA-02",
+    "Los elementos visuales pesados deben comprimirse o sustituirse por componentes textuales de carga inmediata."
+   ],
+   [
+    "CA-03",
+    "El sistema debe notificar al usuario de manera clara cuando el sistema funcione con limitaciones de red."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Activación del modo de baja conectividad",
+    "Que el usuario navega desde una zona rural con señal deficiente",
+    "El sistema detecta una tasa de transferencia de datos muy baja",
+    "La plataforma muestra una alerta sugiriendo activar la versión ligera"
+   ],
+   [
+    "ES-02: Reducción de elementos gráficos",
+    "Que el usuario tiene activado el modo de baja conectividad",
+    "El usuario accede a un formulario o trámite del Estado",
+    "Las imágenes pesadas se ocultan o muestran en baja resolución para agilizar la carga"
+   ],
+   [
+    "ES-03: Notificación de estado de red",
+    "Que el usuario se encuentra realizando un proceso de trámite",
+    "Ocurre una caída temporal o intermitencia en la señal",
+    "El sistema muestra un aviso de advertencia sobre la inestabilidad sin perder el progreso"
+   ]
+  ]
+ },
+ {
+  "id": "HU-002",
+  "nombre": "Asistencia por voz para evitar la escritura manual.",
+  "desc": "Como usuario con dificultades para redactar en dispositivos móviles quiero interactuar mediante comandos y respuestas habladas para completar los campos obligatorios de mi trámite de forma rápida y natural.",
+  "ca": [
+   [
+    "CA-01",
+    "La interfaz debe incorporar un botón visible de micrófono para activar el dictado."
+   ],
+   [
+    "CA-02",
+    "El sistema debe transcribir la voz del usuario a texto dentro del formulario."
+   ],
+   [
+    "CA-03",
+    "El sistema debe emitir confirmaciones  breves para verificar que la información dictada fue comprendida correctamente."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Uso del botón de voz",
+    "Que el usuario visualiza un campo de respuesta en la interfaz",
+    "El usuario presiona el botón de micrófono y pronuncia su respuesta",
+    "El sistema captura el audio y lo traduce automáticamente a texto en el campo"
+   ],
+   [
+    "ES-02:Validación de datos por voz",
+    "Que el usuario ha completado un campo mediante dictado hablado",
+    "El sistema procesa la información transcrita",
+    "El asistente reproduce en audio el texto capturado para su confirmación"
+   ],
+   [
+    "ES-03: Manejo de errores de audio",
+    "Que el usuario utiliza el comando de voz en un entorno con ruido",
+    "El sistema no logra captar o comprender la instrucción hablada",
+    "El sistema solicita amablemente repetir la frase mediante un mensaje claro y sencillo"
+   ]
+  ]
+ },
+ {
+  "id": "HU-003",
+  "nombre": "Recuperación y almacenamiento local ante cortes de señal.",
+  "desc": "Como usuario expuesto a cortes repentinos de internet quiero que mis respuestas sean guardadas automáticamente en la memoria temporal del dispositivo para no perder mi avance si la señal se interrumpe a mitad del trámite.",
+  "ca": [
+   [
+    "CA-01",
+    "El sistema debe respaldar de forma local cada respuesta ingresada de manera inmediata."
+   ],
+   [
+    "CA-02",
+    "Al restablecerse la conexión, la plataforma debe sincronizar automáticamente los datos guardados sin exigir al usuario reiniciar el proceso."
+   ],
+   [
+    "CA-03",
+    "Debe mostrarse un indicador visual que señale si los datos están resguardados localmente o sincronizados con la nube."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Uso del botón de voz",
+    "Que el usuario está respondiendo un formulario paso a paso",
+    "El usuario presiona el botón de micrófono y pronuncia su respuesta",
+    "Las respuestas ingresadas se almacenan de manera segura en el caché del dispositivo"
+   ],
+   [
+    "ES-02: Sincronización al recuperar red",
+    "Que el usuario tenía datos almacenados localmente tras un corte de señal",
+    "La red de internet vuelve a estar disponible en el dispositivo",
+    "La aplicación sincroniza automáticamente la información pendiente con el servidor"
+   ],
+   [
+    "ES-03: Indicador de estado de respaldo",
+    "Que el usuario está interactuando con la plataforma en zonas de riesgo de cobertura",
+    "El usuario observa la esquina superior de la interfaz",
+    "Se visualiza un icono claro que indica que el progreso está respaldado localmente"
+   ]
+  ]
+ },
+ {
+  "id": "HU-004",
+  "nombre": "Optimización de lectura de documentos PDF livianos.",
+  "desc": "Como usuario con un celular de gama baja quiero visualizar constancias o requisitos en un formato PDF optimizado para evitar que el navegador o la aplicación se congelen al intentar abrir documentos oficiales.",
+  "ca": [
+   [
+    "CA-01",
+    "Los documentos generados o consultados deben contar con opciones de compresión máxima para reducir su peso en kilobytes."
+   ],
+   [
+    "CA-02",
+    "La visualización debe permitir un desplazamiento fluido (scroll) sin requerir lectores externos complejos."
+   ],
+   [
+    "CA-03",
+    "El sistema debe ofrecer una alternativa de resumen en texto plano en caso de que el dispositivo no soporte la previsualización del archivo."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Apertura rápida de documentos",
+    "Que el usuario pulsa sobre un comprobante o guía en PDF",
+    "El archivo se procesa en una vista previa optimizada y ligera",
+    "El documento se despliega en pantalla en menos de tres segundos"
+   ],
+   [
+    "ES-02: Alternativa en texto plano",
+    "Que el dispositivo del usuario presenta limitaciones extremas de memoria",
+    "El usuario intenta abrir un documento adjunto pesado",
+    "La interfaz le ofrece leer el contenido directamente en formato de texto plano"
+   ],
+   [
+    "ES-03: Descarga optimizada",
+    "Que el usuario necesita conservar un documento oficial en su celular",
+    "El usuario pulsa el botón de descarga del archivo",
+    "El archivo se almacena localmente ocupando el mínimo espacio posible"
+   ]
+  ]
+ },
+ {
+  "id": "HU-005",
+  "nombre": "Reducción de consumo de datos móviles.",
+  "desc": "Como usuario que recarga datos móviles quiero que la plataforma evite la carga de elementos multimedia innecesarios para poder terminar mis trámites sin agotar mi saldo o paquete de internet.",
+  "ca": [
+   [
+    "CA-01",
+    "La plataforma debe incluir un interruptor visible para activar el \"Modo Ahorro de Datos\"."
+   ],
+   [
+    "CA-02",
+    "Con el modo activado, se deben bloquear videos explicativos, animaciones complejas e imágenes decorativas."
+   ],
+   [
+    "CA-03",
+    "El sistema debe mostrar un contador aproximado de los datos consumidos durante la sesión actual."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Activación del ahorro de datos",
+    "Que el usuario ingresa a la plataforma con datos móviles limitados",
+    "El usuario activa la opción de \"Modo Ahorro\" en el menú principal",
+    "Se deshabilitan automáticamente todos los recursos gráficos pesados"
+   ],
+   [
+    "ES-02: Bloqueo de elementos multimedia",
+    "Que el usuario navega por una sección con guías en video",
+    "El usuario pulsa sobre un video explicativo bajo el modo ahorro",
+    "El sistema muestra una versión en texto o un enlace de audio ligero en su lugar"
+   ],
+   [
+    "ES-03: Monitoreo de consumo",
+    "Que el usuario finaliza o avanza en su trámite",
+    "El usuario consulta el panel de estado de la sesión",
+    "Se visualiza un indicador numérico del consumo estimado de megabytes"
+   ]
+  ]
+ },
+ {
+  "id": "HU-006",
+  "nombre": "Lectura de instrucciones en audio para usuarios con baja alfabetización digital.",
+  "desc": "Como ciudadano en zona rural con poca familiaridad en lectura digital quiero escuchar las instrucciones y preguntas explicadas mediante audios cortos para comprender con exactitud qué debo hacer en cada paso del trámite.",
+  "ca": [
+   [
+    "CA-01",
+    "Cada pantalla o pregunta debe contar con un botón de reproducción de audio (\"Escuchar instrucción\")."
+   ],
+   [
+    "CA-02",
+    "La locución debe ser clara, en un tono pausado y utilizando un lenguaje cotidiano sin tecnicismos complejos."
+   ],
+   [
+    "CA-03",
+    "El usuario debe poder pausar, repetir o detener el audio en cualquier momento mediante controles accesibles."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Reproducción de audio explicativo",
+    "Que el usuario visualiza una pregunta compleja del trámite",
+    "El usuario presiona el botón de altavoz o audio en la pantalla",
+    "El sistema reproduce una explicación guiada por voz de forma clara"
+   ],
+   [
+    "ES-02: Control de reproducción",
+    "Que el audio explicativo se encuentra reproduciéndose",
+    "El usuario pulsa el botón de pausa o repetición",
+    "La plataforma detiene o reinicia la locución inmediatamente"
+   ],
+   [
+    "ES-03: Claridad en el lenguaje",
+    "Que el usuario escucha la locución generada por el sistema",
+    "El asistente utiliza términos coloquiales y directos",
+    "El usuario comprende el objetivo de la pregunta sin confusiones técnicas"
+   ]
+  ]
+ },
+ {
+  "id": "HU-007",
+  "nombre": "Simplificación y diseño de botones grandes para pantallas rústicas.",
+  "desc": "Como usuario que opera dispositivos móviles básicos o desgastados quiero interactuar con botones grandes y bien espaciados para evitar errores de pulsación debido a pantallas pequeñas o táctiles poco sensibles.",
+  "ca": [
+   [
+    "CA-01",
+    "Las áreas táctiles de los botones principales (\"Siguiente\", \"Regresar\", \"Micrófono\") deben cumplir con un tamaño mínimo de área de interacción accesible."
+   ],
+   [
+    "CA-02",
+    "Los elementos interactivos deben estar separados visualmente para prevenir clics accidentales."
+   ],
+   [
+    "CA-03",
+    "Los colores de los botones deben tener un alto contraste respecto al fondo para facilitar su visualización bajo luz solar directa al aire libre."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Pulsación precisa en pantallas móviles",
+    "Que el usuario sostiene un celular básico en exteriores",
+    "El usuario intenta presionar el botón de avanzar en la interfaz",
+    "La acción se ejecuta con éxito al primer toque gracias al gran tamaño del botón"
+   ],
+   [
+    "ES-02: Prevención de toques accidentales",
+    "Que los botones de opción se encuentran cerca en la pantalla",
+    "El usuario pulsa la opción deseada con un margen reducido",
+    "El sistema registra el comando exacto sin activar opciones colindantes"
+   ],
+   [
+    "ES-03: Contraste bajo luz solar",
+    "Que el usuario realiza trámites al aire libre con fuerte iluminación ambiental",
+    "El usuario observa la botonera principal de la aplicación",
+    "Los textos y bordes de los botones resaltan claramente garantizando su visibilidad"
+   ]
+  ]
+ },
+ {
+  "id": "HU-008",
+  "nombre": "Diagnóstico rápido del estado de la conexión antes de iniciar.",
+  "desc": "Como usuario con red intermitente quiero que el sistema evalúe la calidad de mi señal antes de comenzar un proceso largo para saber si cuento con las condiciones adecuadas o si debo activar las herramientas de asistencia ligera.",
+  "ca": [
+   [
+    "CA-01",
+    "Al abrir la aplicación, el sistema debe realizar una prueba rápida de latencia y velocidad de red en segundo plano."
+   ],
+   [
+    "CA-02",
+    "Se debe mostrar un indicador gráfico simple (semáforo: verde, amarillo, rojo) sobre el estado de la conexión actual."
+   ],
+   [
+    "CA-03",
+    "Si la conexión es deficiente, la plataforma debe sugerir automáticamente el uso del modo de voz o bajo consumo."
+   ]
+  ],
+  "es": [
+   [
+    "ES-01: Verificación inicial de red",
+    "Que el usuario abre la plataforma desde su localidad",
+    "El sistema ejecuta un diagnóstico automático de la señal disponible",
+    "Se muestra un indicador de estado de conectividad en la pantalla de bienvenida"
+   ],
+   [
+    "ES-02: Alerta de conexión roja",
+    "Que el diagnóstico detecta una señal de internet casi nula",
+    "El sistema evalúa el nivel de estabilidad de la red del usuario",
+    "La interfaz sugiere cambiar al modo de asistencia por voz o guardar progreso local"
+   ],
+   [
+    "ES-03: Conexión estable",
+    "Que el usuario cuenta con buena señal temporal de datos móviles",
+    "El sistema comprueba que la velocidad de transferencia es óptima",
+    "La plataforma inicia con normalidad sin restricciones adicionales"
+   ]
+  ]
+ },
+ {
+  "id": "HU-009",
+  "nombre": "Modo de baja conectividad para optimización de recursos",
+  "desc": "Como ciudadano que vive en una zona con señal limitada, quiero que la plataforma ofrezca una versión ligera, para realizar mis trámites de manera fluida a pesar de tener una conexión a internet lenta o inestable.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema detecta una conexión de baja velocidad y ofrece al usuario la opción de activar el modo ligero."
+   ],
+   [
+    "CA02",
+    "Los elementos visuales pesados se comprimen o se sustituyen por componentes textuales de carga rápida."
+   ],
+   [
+    "CA03",
+    "El sistema informa claramente cuando funciona con limitaciones de red, sin ocultar las funciones esenciales del trámite."
+   ]
+  ],
+  "es": [
+   [
+    "1. activación del modo ligero",
+    "que el ciudadano accede desde una red lenta o inestable",
+    "el sistema detecta una velocidad de conexión insuficiente",
+    "la plataforma ofrece activar el modo ligero y explica sus características"
+   ],
+   [
+    "2. optimización de recursos",
+    "que el ciudadano tiene activado el modo ligero",
+    "abre una sección que contiene imágenes o recursos pesados",
+    "el sistema carga una versión optimizada sin eliminar información necesaria"
+   ]
+  ]
+ },
+ {
+  "id": "HU-010",
+  "nombre": "Asistencia por voz para evitar la escritura manual",
+  "desc": "Como ciudadano con dificultades para escribir en dispositivos móviles, quiero responder mediante la voz, para completar los datos obligatorios de mi trámite de forma sencilla y natural.",
+  "ca": [
+   [
+    "CA01",
+    "La interfaz incluye un botón de micrófono visible y correctamente identificado para iniciar y detener el dictado."
+   ],
+   [
+    "CA02",
+    "El sistema transcribe la respuesta hablada y la presenta al ciudadano antes de guardarla."
+   ],
+   [
+    "CA03",
+    "El sistema reproduce o lee el dato capturado y solicita confirmación antes de continuar."
+   ]
+  ],
+  "es": [
+   [
+    "1. ingreso de datos por voz",
+    "que el ciudadano se encuentra en un paso que solicita información",
+    "activa el micrófono y pronuncia su respuesta",
+    "el sistema transcribe el dato y lo presenta para su confirmación"
+   ],
+   [
+    "2. audio no reconocido",
+    "que el ciudadano responde en un entorno con ruido",
+    "el sistema no reconoce claramente la respuesta",
+    "el sistema informa el problema y permite repetir la respuesta sin perder el progreso"
+   ]
+  ]
+ },
+ {
+  "id": "HU-011",
+  "nombre": "Recuperación y almacenamiento local ante cortes de señal",
+  "desc": "Como ciudadano expuesto a cortes repentinos de internet, quiero que mis respuestas se guarden temporalmente en el dispositivo, para no perder mi avance si la señal se interrumpe durante el trámite.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema guarda localmente cada respuesta confirmada mientras el trámite se encuentra en curso."
+   ],
+   [
+    "CA02",
+    "Al restablecerse la conexión, el sistema sincroniza la información pendiente sin obligar al ciudadano a reiniciar el proceso."
+   ],
+   [
+    "CA03",
+    "La interfaz muestra si el progreso está guardado localmente, pendiente de sincronización o sincronizado."
+   ]
+  ],
+  "es": [
+   [
+    "1. guardado ante una interrupción",
+    "que el ciudadano ha completado varios pasos del trámite",
+    "la conexión a internet se interrumpe",
+    "el sistema conserva de forma segura las respuestas confirmadas en el dispositivo"
+   ],
+   [
+    "2. reanudación del trámite",
+    "que existe progreso guardado después de un corte",
+    "la conexión vuelve a estar disponible",
+    "el sistema recupera el último paso y sincroniza la información pendiente"
+   ]
+  ]
+ },
+ {
+  "id": "HU-012",
+  "nombre": "Autenticación por preguntas biográficas",
+  "desc": "Como ciudadano no familiarizado con la tecnología del DNIe, quiero comprobar mi identidad respondiendo preguntas biográficas por voz, para no tener que descargar aplicaciones adicionales ni usar lectores de tarjetas.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema genera preguntas biográficas aleatorias basadas en registros oficiales y permite al ciudadano responder mediante voz."
+   ],
+   [
+    "CA02",
+    "El sistema valida las respuestas de voz con tolerancia a variaciones fonéticas, permitiendo un máximo de tres intentos."
+   ],
+   [
+    "CA03",
+    "El sistema otorga acceso al trámite después de completar correctamente la verificación biográfica."
+   ]
+  ],
+  "es": [
+   [
+    "1. autenticación exitosa",
+    "que el ciudadano inicia la verificación por voz",
+    "responde correctamente a las preguntas biográficas",
+    "el sistema valida su identidad y permite continuar con el trámite"
+   ],
+   [
+    "2. reintento por fallo de voz",
+    "que el ciudadano responde una pregunta de verificación",
+    "la respuesta no es reconocida claramente por el sistema",
+    "el sistema solicita repetirla e informa la cantidad de intentos disponibles"
+   ]
+  ]
+ },
+ {
+  "id": "HU-013",
+  "nombre": "Autenticación guiada paso a paso",
+  "desc": "Como ciudadano poco familiarizado con la autenticación digital, quiero recibir instrucciones sencillas durante cada etapa de la validación, para completar el proceso sin confundirme ni depender de terceros.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema explica una instrucción a la vez mediante lenguaje cotidiano y evita mostrar varios requisitos simultáneamente."
+   ],
+   [
+    "CA02",
+    "Antes de solicitar una acción o permiso, el sistema explica su finalidad y comunica el progreso de la validación."
+   ],
+   [
+    "CA03",
+    "El ciudadano puede repetir la instrucción actual mediante un comando de voz o un botón visible."
+   ]
+  ],
+  "es": [
+   [
+    "1. orientación durante la validación",
+    "que el ciudadano inicia el proceso de autenticación",
+    "el sistema solicita una nueva acción",
+    "el asistente explica el propósito de la acción y guía al ciudadano paso a paso"
+   ],
+   [
+    "2. repetición de una instrucción",
+    "que el ciudadano no comprende el paso actual",
+    "solicita repetir la indicación mediante voz o botón",
+    "el sistema reproduce nuevamente la instrucción con lenguaje sencillo"
+   ]
+  ]
+ },
+ {
+  "id": "HU-014",
+  "nombre": "Recuperación ante errores de autenticación",
+  "desc": "Como ciudadano que cometió un error durante la autenticación, quiero corregir únicamente el paso fallido, para no reiniciar todo el proceso ni perder la información validada.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema identifica el paso que produjo el error y lo explica mediante un mensaje sencillo y específico."
+   ],
+   [
+    "CA02",
+    "El ciudadano puede repetir únicamente el paso fallido mientras se conservan de forma segura los datos ya validados."
+   ],
+   [
+    "CA03",
+    "Después de varios intentos fallidos, el sistema ofrece ayuda y un mecanismo alternativo autorizado por la entidad correspondiente."
+   ]
+  ],
+  "es": [
+   [
+    "1. corrección del paso fallido",
+    "que el ciudadano ha completado parte de la autenticación",
+    "una respuesta o acción no puede validarse",
+    "el sistema conserva el progreso y permite repetir únicamente el paso con error"
+   ],
+   [
+    "2. derivación a una alternativa",
+    "que el ciudadano agotó los intentos permitidos",
+    "el sistema no puede completar la validación",
+    "el sistema explica la situación y ofrece un canal alternativo autorizado"
+   ]
+  ]
+ },
+ {
+  "id": "HU-015",
+  "nombre": "Traducción de lenguaje administrativo",
+  "desc": "Como ciudadano con poca experiencia en trámites estatales, quiero recibir instrucciones en lenguaje cotidiano, para comprender los requisitos y completar el trámite sin interpretar términos técnicos.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema reemplaza o explica los términos administrativos y técnicos mediante expresiones breves de uso cotidiano."
+   ],
+   [
+    "CA02",
+    "El asistente solicita un dato por vez e indica por qué es necesario antes de continuar."
+   ],
+   [
+    "CA03",
+    "El ciudadano puede pedir una explicación adicional o un ejemplo sin abandonar el paso actual."
+   ]
+  ],
+  "es": [
+   [
+    "1. explicación de un término técnico",
+    "que el trámite contiene un término administrativo",
+    "el sistema presenta la instrucción al ciudadano",
+    "el asistente utiliza una expresión cotidiana y ofrece ampliar la explicación"
+   ],
+   [
+    "2. solicitud de ayuda contextual",
+    "que el ciudadano no comprende una indicación",
+    "solicita una explicación adicional",
+    "el sistema proporciona un ejemplo sencillo y mantiene el progreso del trámite"
+   ]
+  ]
+ },
+ {
+  "id": "HU-016",
+  "nombre": "Privacidad y constancia del trámite",
+  "desc": "Como ciudadano que proporciona datos personales mediante voz, quiero conocer cómo se utilizará mi información y recibir una constancia, para realizar el trámite con confianza y conservar evidencia de la gestión.",
+  "ca": [
+   [
+    "CA01",
+    "Antes de solicitar datos sensibles, el sistema informa qué dato necesita, para qué se utilizará y ante qué entidad se registrará."
+   ],
+   [
+    "CA02",
+    "La interfaz permite ocultar datos sensibles en pantalla y evita reproducirlos en voz alta sin autorización del ciudadano."
+   ],
+   [
+    "CA03",
+    "Al finalizar, el sistema genera una constancia con código, entidad, trámite, fecha y estado de la gestión."
+   ]
+  ],
+  "es": [
+   [
+    "1. protección de un dato sensible",
+    "que el sistema necesita solicitar información personal",
+    "el ciudadano llega al paso correspondiente",
+    "el asistente explica su uso y permite elegir si el dato se muestra o se reproduce en voz alta"
+   ],
+   [
+    "2. emisión de constancia",
+    "que el ciudadano completó y confirmó el trámite",
+    "la entidad acepta el envío",
+    "el sistema muestra y permite descargar o compartir una constancia con el código de seguimiento"
+   ]
+  ]
+ },
+ {
+  "id": "HU-017",
+  "nombre": "Guía para la validación de identidad",
+  "desc": "Como adulto mayor, quiero recibir instrucciones paso a paso para validar mi identidad, para poder realizar un trámite digital sin depender de otra persona.",
+  "ca": [
+   [
+    "CA01",
+    "Antes de iniciar la validación, el sistema explica de manera sencilla los pasos que deberá realizar el ciudadano."
+   ],
+   [
+    "CA02",
+    "El sistema proporciona instrucciones por voz durante cada etapa del proceso de identificación."
+   ],
+   [
+    "CA03",
+    "El sistema informa claramente cuando la identidad ha sido validada correctamente o cuando se requiere corregir algún dato."
+   ]
+  ],
+  "es": [
+   [
+    "1. inicio de validación",
+    "que el ciudadano necesita validar su identidad",
+    "inicia el proceso de autenticación",
+    "el asistente explica mediante voz los pasos que debe realizar"
+   ],
+   [
+    "2. validación correcta",
+    "que el ciudadano proporcionó los datos solicitados",
+    "el sistema verifica correctamente su identidad",
+    "el asistente confirma la validación y permite continuar con el trámite"
+   ]
+  ]
+ },
+ {
+  "id": "HU-018",
+  "nombre": "Explicación del uso del DNI electrónico",
+  "desc": "Como adulto mayor, quiero recibir una explicación sencilla sobre cómo utilizar mi DNI electrónico, para comprender cómo identificarme en las plataformas del Estado.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema explica en lenguaje sencillo qué es el DNI electrónico y para qué se utiliza durante el trámite."
+   ],
+   [
+    "CA02",
+    "El asistente indica paso a paso cómo utilizar el DNI electrónico cuando sea necesario."
+   ],
+   [
+    "CA03",
+    "El sistema evita tecnicismos innecesarios y proporciona explicaciones adicionales cuando el usuario las solicita."
+   ]
+  ],
+  "es": [
+   [
+    "1. explicación del DNI",
+    "que el ciudadano desconoce cómo utilizar su DNI electrónico",
+    "llega a una etapa que requiere identificación digital",
+    "el asistente explica de manera sencilla qué debe hacer"
+   ],
+   [
+    "2. solicitud de ayuda",
+    "que el ciudadano no comprende una instrucción relacionada con el DNI electrónico",
+    "solicita que se le explique nuevamente",
+    "el asistente repite la indicación utilizando términos más sencillos"
+   ]
+  ]
+ },
+ {
+  "id": "HU-019",
+  "nombre": "Información previa de requisitos de autenticación",
+  "desc": "Como usuario, quiero conocer los requisitos necesarios para identificarme antes de iniciar un trámite, para estar preparado y evitar confusiones durante el proceso.",
+  "ca": [
+   [
+    "CA01",
+    "Antes de comenzar el trámite, el sistema informa qué documentos, datos o mecanismos de identificación serán necesarios."
+   ],
+   [
+    "CA02",
+    "Los requisitos se presentan mediante lenguaje sencillo y pueden ser reproducidos por voz."
+   ],
+   [
+    "CA03",
+    "El ciudadano puede solicitar que los requisitos sean repetidos antes de continuar."
+   ]
+  ],
+  "es": [
+   [
+    "1. consulta de requisitos",
+    "que el ciudadano desea iniciar un trámite",
+    "selecciona el trámite que necesita realizar",
+    "el asistente informa los requisitos necesarios para validar su identidad"
+   ],
+   [
+    "2. repetición de requisitos",
+    "que el ciudadano no recuerda todos los requisitos",
+    "solicita escucharlos nuevamente",
+    "el asistente vuelve a enumerarlos de manera clara y ordenada"
+   ]
+  ]
+ },
+ {
+  "id": "HU-020",
+  "nombre": "Acompañamiento por voz durante la autenticación",
+  "desc": "Como adulto mayor, quiero que el sistema me indique mediante voz qué debo hacer en cada paso, para completar el proceso de autenticación con mayor facilidad.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema proporciona una instrucción verbal antes de cada acción requerida."
+   ],
+   [
+    "CA02",
+    "El usuario puede solicitar que una instrucción sea repetida sin reiniciar el proceso."
+   ],
+   [
+    "CA03",
+    "El sistema informa al ciudadano cuando cada paso ha sido completado correctamente."
+   ]
+  ],
+  "es": [
+   [
+    "1. orientación durante el proceso",
+    "que el ciudadano está realizando la autenticación",
+    "llega a un nuevo paso",
+    "el asistente explica por voz qué acción debe realizar"
+   ],
+   [
+    "2. repetición de instrucción",
+    "que el ciudadano no comprendió una indicación",
+    "solicita repetirla",
+    "el asistente reproduce nuevamente la instrucción sin perder el progreso"
+   ]
+  ]
+ },
+ {
+  "id": "HU-021",
+  "nombre": "Confirmación de identidad validada",
+  "desc": "Como usuario, quiero recibir una confirmación cuando mi identidad haya sido validada correctamente, para tener seguridad de que puedo continuar con el trámite.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema informa de forma visual y auditiva cuando la identidad ha sido validada."
+   ],
+   [
+    "CA02",
+    "La confirmación se presenta antes de continuar con la siguiente etapa del trámite."
+   ],
+   [
+    "CA03",
+    "Si la validación no fue exitosa, el sistema informa el problema sin mostrar mensajes técnicos difíciles de comprender."
+   ]
+  ],
+  "es": [
+   [
+    "1. identidad validada",
+    "que el ciudadano proporcionó correctamente la información requerida",
+    "llega a un nuevo paso",
+    "el asistente explica por voz qué acción debe realizar"
+   ],
+   [
+    "2. identidad no validada",
+    "que existe un problema con la información proporcionada",
+    "solicita repetirla",
+    "el asistente informa el problema y explica qué debe corregirse"
+   ]
+  ]
+ },
+ {
+  "id": "HU-022",
+  "nombre": "Recuperación ante errores de autenticación",
+  "desc": "Como adulto mayor, quiero recibir instrucciones sencillas cuando ocurra un error durante la autenticación, para corregirlo sin tener que reiniciar todo el proceso.",
+  "ca": [
+   [
+    "CA01",
+    "Cuando ocurre un error, el sistema explica en lenguaje sencillo qué sucedió."
+   ],
+   [
+    "CA02",
+    "El sistema indica al ciudadano qué acción puede realizar para solucionar el problema."
+   ],
+   [
+    "CA03",
+    "La corrección de un error no obliga al ciudadano a repetir los pasos que ya fueron completados correctamente."
+   ]
+  ],
+  "es": [
+   [
+    "1. error corregible",
+    "que el ciudadano ingresó incorrectamente un dato",
+    "el sistema detecta el error",
+    "el asistente explica qué dato debe corregir y permite intentarlo nuevamente"
+   ],
+   [
+    "2. recuperación del proceso",
+    "que el ciudadano ya completó pasos anteriores",
+    "ocurre un error durante la autenticación",
+    "el sistema conserva el progreso y permite continuar desde el punto del error"
+   ]
+  ]
+ },
+ {
+  "id": "HU-023",
+  "nombre": "Explicación de términos técnicos",
+  "desc": "Como adulto mayor, quiero que los términos técnicos relacionados con la identificación digital sean explicados en palabras sencillas, para comprender qué me solicita la plataforma.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema reemplaza o complementa los términos técnicos con explicaciones en lenguaje cotidiano."
+   ],
+   [
+    "CA02",
+    "El usuario puede solicitar mediante voz la explicación de un término que no comprende."
+   ],
+   [
+    "CA03",
+    "La explicación indica qué debe hacer el ciudadano y no solamente proporciona una definición técnica."
+   ]
+  ],
+  "es": [
+   [
+    "1. término desconocido",
+    "que durante el trámite aparece un término técnico",
+    "el ciudadano solicita una explicación",
+    "el asistente explica su significado utilizando palabras sencillas"
+   ],
+   [
+    "2. instrucción técnica",
+    "que una acción requiere conocimientos que el ciudadano no posee",
+    "el sistema presenta la instrucción",
+    "el asistente explica qué significa y qué debe hacer el ciudadano"
+   ]
+  ]
+ },
+ {
+  "id": "HU-024",
+  "nombre": "Continuación del proceso de autenticación",
+  "desc": "Como usuario, quiero poder retomar el proceso desde el paso donde tuve una dificultad, para evitar repetir información y completar el trámite de manera autónoma.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema conserva los pasos completados correctamente durante el proceso de autenticación."
+   ],
+   [
+    "CA02",
+    "Después de resolver una dificultad, el ciudadano puede continuar desde el último paso pendiente."
+   ],
+   [
+    "CA03",
+    "Antes de reanudar, el sistema informa al ciudadano desde qué punto continuará el proceso."
+   ]
+  ],
+  "es": [
+   [
+    "1. continuación después de un error",
+    "que el ciudadano completó correctamente parte de la autenticación",
+    "corrige el problema encontrado en un paso posterior",
+    "el sistema conserva los datos válidos y continúa desde el siguiente paso pendiente"
+   ],
+   [
+    "2. reanudación guiada",
+    "que el proceso quedó interrumpido durante la autenticación",
+    "el ciudadano vuelve a continuar el proceso",
+    "el asistente informa dónde quedó y lo guía desde ese punto"
+   ]
+  ]
+ },
+ {
+  "id": "HU-025",
+  "nombre": "Orientación durante el trámite",
+  "desc": "Como adulta mayor, quiero recibir instrucciones claras paso a paso durante el trámite, para saber qué debo hacer en cada momento y poder completarlo de manera autónoma.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema proporciona una instrucción clara antes de cada paso del trámite."
+   ],
+   [
+    "CA02",
+    "El sistema informa al usuario cuando un paso ha sido completado correctamente."
+   ],
+   [
+    "CA03",
+    "El usuario puede solicitar nuevamente la explicación del paso actual."
+   ]
+  ],
+  "es": [
+   [
+    "1. orientación del paso",
+    "que el ciudadano está realizando un trámite",
+    "llega a un nuevo paso",
+    "el asistente explica qué debe hacer"
+   ],
+   [
+    "2. repetición de instrucción",
+    "que el ciudadano no comprendió una indicación",
+    "solicita ayuda",
+    "el asistente repite la instrucción de manera sencilla"
+   ]
+  ]
+ },
+ {
+  "id": "HU-026",
+  "nombre": "Información en lenguaje sencillo",
+  "desc": "Como adulta mayor, quiero recibir la información del trámite utilizando palabras sencillas, para comprender los requisitos y evitar confusiones.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema presenta las instrucciones utilizando lenguaje cotidiano."
+   ],
+   [
+    "CA02",
+    "El sistema evita tecnicismos innecesarios durante el trámite."
+   ],
+   [
+    "CA03",
+    "El usuario puede solicitar una explicación adicional cuando no comprende un término."
+   ]
+  ],
+  "es": [
+   [
+    "1. explicación sencilla",
+    "que el ciudadano encuentra una instrucción difícil de comprender",
+    "solicita una explicación",
+    "el asistente explica la instrucción con palabras sencillas"
+   ],
+   [
+    "2. aclaración de término",
+    "que el ciudadano desconoce un término utilizado en el trámite",
+    "pregunta qué significa",
+    "el sistema proporciona una explicación clara"
+   ]
+  ]
+ },
+ {
+  "id": "HU-027",
+  "nombre": "Guía por voz durante el trámite",
+  "desc": "Como adulta mayor, quiero recibir indicaciones mediante voz, para poder realizar el trámite de forma más sencilla sin depender completamente de la información escrita.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema comunica mediante voz las instrucciones necesarias para completar el trámite."
+   ],
+   [
+    "CA02",
+    "El usuario puede solicitar que una instrucción sea repetida."
+   ],
+   [
+    "CA03",
+    "El sistema confirma mediante voz cuando una acción se realizó correctamente."
+   ]
+  ],
+  "es": [
+   [
+    "1. inicio de guía por voz",
+    "que el ciudadano inicia un trámite",
+    "comienza un nuevo paso",
+    "el asistente proporciona la instrucción mediante voz"
+   ],
+   [
+    "2. repetición por voz",
+    "que el ciudadano no recuerda la instrucción",
+    "solicita repetirla",
+    "el asistente vuelve a comunicarla"
+   ]
+  ]
+ },
+ {
+  "id": "HU-028",
+  "nombre": "Confirmación de información ingresada",
+  "desc": "Como adulta mayor, quiero que el sistema confirme la información que proporciono antes de continuar, para evitar errores durante el trámite.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema repite los datos ingresados antes de continuar."
+   ],
+   [
+    "CA02",
+    "El usuario puede confirmar o corregir la información proporcionada."
+   ],
+   [
+    "CA03",
+    "El sistema no continúa con el siguiente paso hasta recibir la confirmación correspondiente."
+   ]
+  ],
+  "es": [
+   [
+    "1. confirmación de datos",
+    "que el ciudadano ingresó un dato",
+    "termina de proporcionarlo",
+    "el sistema repite el dato para su confirmación"
+   ],
+   [
+    "2. corrección de información",
+    "que el dato confirmado es incorrecto",
+    "el ciudadano indica que desea corregirlo",
+    "el sistema permite ingresar nuevamente el dato"
+   ]
+  ]
+ },
+ {
+  "id": "HU-029",
+  "nombre": "Realización autónoma del trámite",
+  "desc": "Como adulta mayor, quiero completar un trámite digital con orientación del sistema, para reducir mi dependencia de familiares u otras personas.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema guía al ciudadano durante las diferentes etapas del trámite."
+   ],
+   [
+    "CA02",
+    "El ciudadano puede completar cada paso sin requerir asistencia externa."
+   ],
+   [
+    "CA03",
+    "El sistema proporciona ayuda cuando el ciudadano presenta una dificultad."
+   ]
+  ],
+  "es": [
+   [
+    "1. trámite autónomo",
+    "que el ciudadano inicia un trámite",
+    "sigue las instrucciones proporcionadas",
+    "el sistema lo guía hasta completar el proceso"
+   ],
+   [
+    "2. solicitud de ayuda",
+    "que el ciudadano presenta una dificultad",
+    "solicita asistencia",
+    "el sistema proporciona orientación para continuar"
+   ]
+  ]
+ },
+ {
+  "id": "HU-030",
+  "nombre": "Recuperación ante errores",
+  "desc": "Como adulta mayor, quiero recibir ayuda cuando cometa un error durante el trámite, para poder corregirlo sin sentirme confundida ni tener que comenzar nuevamente.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema informa cuando detecta un dato o acción incorrecta."
+   ],
+   [
+    "CA02",
+    "El sistema explica cómo corregir el error."
+   ],
+   [
+    "CA03",
+    "El usuario puede corregir el dato sin reiniciar todo el trámite."
+   ]
+  ],
+  "es": [
+   [
+    "1. detección del error",
+    "que el ciudadano ingresó información incorrecta",
+    "el sistema valida el dato",
+    "el asistente informa que debe corregirse"
+   ],
+   [
+    "2. corrección del error",
+    "que el sistema indicó un error",
+    "el ciudadano proporciona nuevamente el dato",
+    "el sistema valida la nueva información y permite continuar"
+   ]
+  ]
+ },
+ {
+  "id": "HU-031",
+  "nombre": "Consulta previa de requisitos",
+  "desc": "Como adulta mayor, quiero conocer los requisitos antes de iniciar un trámite, para tener preparada la información necesaria y evitar interrupciones durante el proceso.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema informa los requisitos antes de comenzar el trámite."
+   ],
+   [
+    "CA02",
+    "Los requisitos son explicados utilizando lenguaje sencillo."
+   ],
+   [
+    "CA03",
+    "El usuario puede solicitar que los requisitos sean repetidos."
+   ]
+  ],
+  "es": [
+   [
+    "1. consulta de requisitos",
+    "que el ciudadano desea realizar un trámite",
+    "selecciona el trámite",
+    "el sistema informa los requisitos necesarios"
+   ],
+   [
+    "2. repetición de requisitos",
+    "que el ciudadano no recuerda todos los requisitos",
+    "solicita escucharlos nuevamente",
+    "el asistente vuelve a enumerarlos claramente"
+   ]
+  ]
+ },
+ {
+  "id": "HU-032",
+  "nombre": "Continuación después de una dificultad",
+  "desc": "Como adulta mayor, quiero poder continuar el trámite después de resolver una dificultad, para evitar repetir los pasos que ya completé..",
+  "ca": [
+   [
+    "CA01",
+    "El sistema conserva los pasos completados correctamente."
+   ],
+   [
+    "CA02",
+    "Después de resolver una dificultad, el ciudadano puede continuar desde el último paso pendiente."
+   ],
+   [
+    "CA03",
+    "Antes de continuar, el sistema informa al ciudadano desde qué punto retomará el proceso."
+   ]
+  ],
+  "es": [
+   [
+    "1. continuación después de una dificultad",
+    "que el ciudadano completó correctamente parte del trámite",
+    "corrige el problema encontrado",
+    "el sistema conserva los datos válidos y continúa desde el siguiente paso pendiente"
+   ],
+   [
+    "2. reanudación guiada",
+    "que el proceso quedó interrumpido durante el trámite",
+    "el ciudadano vuelve a continuar el proceso",
+    "el asistente informa dónde quedó y lo guía desde ese punto"
+   ]
+  ]
+ },
+ {
+  "id": "HU-033",
+  "nombre": "Flujo continuo sin redirecciones externas",
+  "desc": "Como ciudadana que realiza trámites digitales, quiero que todo el proceso se ejecute dentro de una misma interfaz unificada sin derivarme a páginas web externas, para evitar desorientarme o perder el avance de mi gestión.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema integra todos los pasos del trámite dentro del mismo entorno conversacional, evitando la apertura de pestañas o navegadores externos."
+   ],
+   [
+    "CA02",
+    "Si se requiere consultar información de otra entidad, la plataforma realiza la consulta internamente y presenta el resultado al usuario."
+   ],
+   [
+    "CA03",
+    "La interfaz mantiene una barra de progreso visible que indica en todo momento el estado actual del trámite."
+   ]
+  ],
+  "es": [
+   [
+    "1. navegación unificada",
+    "que la usuaria se encuentra completando un trámite",
+    "el proceso requiere validar o consultar información complementaria",
+    "el sistema gestiona la solicitud internamente y mantiene a la usuaria en la misma pantalla sin redirecciones"
+   ],
+   [
+    "2. prevención de pérdida de contexto",
+    "que un servicio estatal externo requiere validación",
+    "la plataforma procesa los datos",
+    "muestra una animación de carga integrada y notifica el resultado directamente sin abrir ventanas adicionales"
+   ]
+  ]
+ },
+ {
+  "id": "HU-034",
+  "nombre": "Indicación clara del siguiente paso a seguir",
+  "desc": "Como usuaria que suele confundirse sobre el avance del trámite, quiero que el asistente me indique explícitamente cuál es el paso inmediato que debo realizar, para saber con certeza cómo continuar sin incertidumbre.",
+  "ca": [
+   [
+    "CA01",
+    "Al finalizar cada acción, el sistema anuncia por voz y texto destacado la siguiente acción concreta requerida."
+   ],
+   [
+    "CA02",
+    "La pantalla resalta visualmente el elemento interactivo activo correspondiente al paso actual."
+   ],
+   [
+    "CA03",
+    "La usuaria puede preguntar en cualquier momento \"¿qué debo hacer ahora?\" y recibir una explicación concisa."
+   ]
+  ],
+  "es": [
+   [
+    "1. orientación al completar una etapa",
+    "que la usuaria finalizó el ingreso de un dato",
+    "el sistema valida la respuesta",
+    "el asistente le informa verbalmente cuál es el siguiente paso necesario para continuar"
+   ],
+   [
+    "2. consulta de orientación inmediata",
+    "que la usuaria duda sobre la acción a realizar",
+    "pronuncia \"¿cuál es el siguiente paso?\" o pulsa el botón de ayuda",
+    "el asistente responde con una instrucción clara y concisa sobre la acción requerida"
+   ]
+  ]
+ },
+ {
+  "id": "HU-035",
+  "nombre": "Guía adaptativa paso a paso según necesidad",
+  "desc": "Como ciudadana con necesidades específicas en su trámite, quiero que el asistente adapte sus preguntas paso a paso a mi caso particular, para no tener que responder pasos innecesarios ni navegar opciones irrelevantes.",
+  "ca": [
+   [
+    "CA01",
+    "El asistente identifica la necesidad planteada por el usuario y personaliza la ruta del trámite omitiendo pasos no aplicables."
+   ],
+   [
+    "CA02",
+    "Cada instrucción se fragmenta en preguntas individuales y sencillas que guían al usuario de manera progresiva."
+   ],
+   [
+    "CA03",
+    "El sistema resume brevemente las etapas que componen el trámite antes de iniciar la interacción guiada."
+   ]
+  ],
+  "es": [
+   [
+    "1. personalización del flujo de preguntas",
+    "que el usuario especifica el motivo de su trámite",
+    "el sistema reconoce los requerimientos específicos del caso",
+    "ajusta la secuencia de pasos omitiendo campos que no correspondan a su situación"
+   ],
+   [
+    "2. avance guiado atómico",
+    "que el trámite cuenta con múltiples requerimientos",
+    "el usuario avanza en el diálogo",
+    "el asistente presenta únicamente un requerimiento a la vez hasta finalizar la solicitud"
+   ]
+  ]
+ },
+ {
+  "id": "HU-036",
+  "nombre": "Optimización de carga ante internet lento en el hogar",
+  "desc": "Como usuaria que cuenta con una conexión a internet lenta en su domicilio, quiero que la interfaz optimice la transferencia de datos y funcione con bajo consumo de ancho de banda, para completar mi trámite sin congelamientos ni demoras excesivas.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema comprime el envío y recepción de paquetes de audio y texto para operar eficientemente sobre redes lentas."
+   ],
+   [
+    "CA02",
+    "Los datos esenciales se precargan de forma anticipada para evitar esperas prolongadas entre pantallas."
+   ],
+   [
+    "CA03",
+    "Si la velocidad de red disminuye, el sistema prioriza el flujo conversacional y desactiva recursos visuales secundarios."
+   ]
+  ],
+  "es": [
+   [
+    "1. funcionamiento en red de baja velocidad",
+    "que la usuaria se conecta desde su hogar con una señal de internet lenta",
+    "inicia la interacción con el asistente de voz",
+    "la plataforma comprime las transmisiones de audio y mantiene una respuesta fluida sin interrupciones"
+   ],
+   [
+    "2. priorización de contenido esencial",
+    "que se detecta una degradación de la señal de red",
+    "se intercambia información del trámite",
+    "el sistema prioriza la transmisión de datos textuales y sonoros críticos evitando el bloqueo de la sesión"
+   ]
+  ]
+ },
+ {
+  "id": "HU-037",
+  "nombre": "Tolerancia y retención de datos ante latencia de conexión",
+  "desc": "Como ciudadana expuesta a fluctuaciones de velocidad en su red doméstica, quiero que el sistema preserve mis respuestas ante pausas prolongadas de conexión, para no perder mi avance si la señal se debilita momentáneamente.",
+  "ca": [
+   [
+    "CA01",
+    "Las respuestas del usuario se almacenan en caché local antes de sincronizarse con el servidor."
+   ],
+   [
+    "CA02",
+    "Si se produce una pausa o retardo temporal en la conexión, la interfaz muestra un aviso de espera sin recargar la página."
+   ],
+   [
+    "CA03",
+    "Al restablecerse la velocidad de transferencia, los datos se sincronizan automáticamente sin intervención del usuario."
+   ]
+  ],
+  "es": [
+   [
+    "1. retención temporal ante demora de red",
+    "que la usuaria responde verbalmente una pregunta durante una caída de velocidad",
+    "el sistema procesa el dato",
+    "almacena temporalmente la respuesta en el dispositivo hasta confirmar la recepción en el servidor"
+   ],
+   [
+    "2. reanudación transparente",
+    "que la conexión experimentó una pausa temporal",
+    "la señal recupera estabilidad",
+    "el sistema sincroniza los datos pendientes y continúa el flujo en el punto exacto sin solicitar reingreso"
+   ]
+  ]
+ },
+ {
+  "id": "HU-038",
+  "nombre": "Visualización integrada de constancias sin descargas complejas",
+  "desc": "Como usuaria que tiene dificultades para descargar y gestionar archivos PDF en su teléfono móvil, quiero visualizar mi constancia de trámite directamente en la aplicación, para consultar mi comprobante oficial sin saturar la memoria de mi dispositivo.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema muestra la constancia oficial directamente en pantalla mediante un visor ligero integrado."
+   ],
+   [
+    "CA02",
+    "El comprobante contiene la información esencial (número de trámite, fecha, sede y código QR) en formato de fácil lectura."
+   ],
+   [
+    "CA03",
+    "El usuario puede solicitar la lectura por voz del resumen de la constancia en lugar de descargar el archivo."
+   ]
+  ],
+  "es": [
+   [
+    "1. visualización directa de comprobante",
+    "que el trámite ha concluido satisfactoriamente",
+    "se genera la constancia final",
+    "la aplicación despliega el documento directamente en pantalla sin exigir la descarga externa de un archivo"
+   ],
+   [
+    "2. lectura auditiva del resumen oficial",
+    "que la usuaria prefiere no revisar el documento visual",
+    "solicita escuchar la constancia",
+    "el asistente reproduce en audio los datos clave como código de solicitud y lugar de entrega"
+   ]
+  ]
+ },
+ {
+  "id": "HU-039",
+  "nombre": "Sustitución de escritura en pantalla por dictado guiado",
+  "desc": "Como ciudadana que encuentra incómodo o lento escribir textos largos en el teclado del celular, quiero ingresar toda la información mediante dictado por voz, para realizar mi trámite de forma ágil y cómoda sin depender de la mecanografía móvil.",
+  "ca": [
+   [
+    "CA01",
+    "Todos los campos del formulario cuentan con soporte de captura mediante entrada de voz interactiva."
+   ],
+   [
+    "CA02",
+    "El sistema transcribe el dictado en tiempo real en la casilla correspondiente para revisión visual simultánea."
+   ],
+   [
+    "CA03",
+    "El usuario puede dictar correcciones específicas sin necesidad de seleccionar o borrar texto manualmente."
+   ]
+  ],
+  "es": [
+   [
+    "1. ingreso de datos por voz",
+    "que el formulario solicita un dato textual",
+    "la usuaria presiona el botón de dictado y pronuncia su información",
+    "el sistema transcribe el contenido en el campo correspondiente y confirma auditivamente el valor registrado"
+   ],
+   [
+    "2. rectificación sin teclado",
+    "que un dato dictado requiere ajuste",
+    "la usuaria indica verbalmente la corrección deseada",
+    "el asistente actualiza el texto en pantalla sin obligar a la usuaria a usar el teclado táctil"
+   ]
+  ]
+ },
+ {
+  "id": "HU-040",
+  "nombre": "Asistencia explicativa ante términos confusos del trámite",
+  "desc": "Como usuaria que no comprende qué significa un término o requerimiento del Estado, quiero pedir una explicación sencilla al asistente en cualquier momento, para entender qué me solicitan y no abandonar el trámite por confusión.",
+  "ca": [
+   [
+    "CA01",
+    "El asistente reconoce preguntas de aclaración como \"¿qué significa esto?\" o \"¿para qué me piden esto?\"."
+   ],
+   [
+    "CA02",
+    "La explicación se proporciona en lenguaje cotidiano, libre de tecnicismos legales o administrativos."
+   ],
+   [
+    "CA03",
+    "Tras brindar la explicación, el asistente retoma automáticamente el flujo del trámite en la pregunta activa."
+   ]
+  ],
+  "es": [
+   [
+    "1. solicitud de aclaración verbal",
+    "que el asistente formula una pregunta que incluye un término administrativo",
+    "la usuaria pregunta \"¿qué significa eso?\"",
+    "el sistema explica el concepto en palabras sencillas y cotidianas de inmediato"
+   ],
+   [
+    "2. retorno fluido al trámite",
+    "que el asistente concluyó la explicación aclaratoria",
+    "la usuaria confirma haber comprendido",
+    "el sistema repite la pregunta original para continuar con el registro del dato"
+   ]
+  ]
+ },
+ {
+  "id": "HU-041",
+  "nombre": "Reducción de sobrecarga cognitiva y eliminación de información excesiva",
+  "desc": "Como ciudadano que no está familiarizado con interfaces electrónicas complejas, quiero que la plataforma filtre el exceso de textos y requerimientos secundarios, para visualizar únicamente los elementos indispensables de mi trámite sin saturarme de información.",
+  "ca": [
+   [
+    "CA01",
+    "La pantalla presenta una distribución visual limpia y minimalista, ocultando bloques densos de texto legal o administrativo que no correspondan a la acción inmediata."
+   ],
+   [
+    "CA02",
+    "El asistente de voz resume en un máximo de dos oraciones breves la información central necesaria para avanzar en el paso."
+   ],
+   [
+    "CA03",
+    "Se incluye una opción de consulta verbal (\"¿por qué me piden esto?\") para desplegar detalles adicionales únicamente si el usuario lo solicita expresamente."
+   ]
+  ],
+  "es": [
+   [
+    "1. visualización de interfaz despejada",
+    "que el ciudadano ingresa a una sección del trámite con múltiples directivas estatales",
+    "el sistema carga la pantalla de captura de datos",
+    "oculta los párrafos extensos y despliega únicamente el campo activo con una instrucción concisa en texto y voz"
+   ],
+   [
+    "2. solicitud de detalle opcional",
+    "que el usuario desea conocer la base legal de un requerimiento presentado",
+    "pronuncia el comando \"¿por qué me piden esto?\" o pulsa el botón de ayuda breve",
+    "el sistema proporciona una explicación resumida en lenguaje cotidiano sin alterar el flujo principal"
+   ]
+  ]
+ },
+ {
+  "id": "HU-042",
+  "nombre": "Guía atómica de paso único (one-step-at-a-time)",
+  "desc": "Como usuario abrumado por plataformas que exigen múltiples requisitos a la vez, quiero que el asistente me solicite un solo dato o acción por turno, para completar mi gestión de forma secuencial, práctica y sin confusiones.",
+  "ca": [
+   [
+    "CA01",
+    "Cada pantalla o interacción auditiva contiene exclusivamente un requerimiento o pregunta a la vez."
+   ],
+   [
+    "CA02",
+    "El sistema no avanza a la siguiente solicitud hasta que el dato actual haya sido ingresado y confirmado por el usuario."
+   ],
+   [
+    "CA03",
+    "Se muestra un indicador numérico simple (por ejemplo: \"Paso 2 de 5\") que refuerza el progreso lineal y unitario del trámite."
+   ]
+  ],
+  "es": [
+   [
+    "1. solicitud atómica de requerimientos",
+    "que un trámite estatal comprende cinco requisitos de registro",
+    "el usuario inicia el procedimiento asistido por voz",
+    "el asistente solicita el primer requisito de manera aislada y espera la respuesta del ciudadano antes de mencionar el segundo"
+   ],
+   [
+    "2. transición secuencial tras confirmación",
+    "que el ciudadano ha validado el dato solicitado en el paso activo",
+    "confirma que la información es correcta",
+    "el sistema actualiza el indicador de avance y plantea verbalmente la siguiente pregunta de forma individual"
+   ]
+  ]
+ },
+ {
+  "id": "HU-043",
+  "nombre": "Orientación didáctica paso a paso para uso del DNI electrónico (DNIe)",
+  "desc": "Como ciudadano que cuenta con DNI electrónico pero no domina su uso técnico en computadora o celular, quiero recibir instrucciones sencillas y guiadas por voz sobre cómo autenticarme, para realizar trámites oficiales con mi DNIe sin bloqueos ni requerimientos incomprensibles.",
+  "ca": [
+   [
+    "CA01",
+    "El sistema ofrece una guía inicial interactiva que explica con lenguaje sencillo si se requiere chip NFC móvil, lector físico o validación por clave digital."
+   ],
+   [
+    "CA02",
+    "Si el usuario no cuenta con lector de tarjetas DNIe en computadora, el asistente ofrece una vía alternativa de autenticación segura (preguntas biográficas de RENIEC o reconocimiento facial móvil)."
+   ],
+   [
+    "CA03",
+    "Cada paso de vinculación del DNIe está acompañado de un gráfico ilustrativo claro y una narración sonora de apoyo."
+   ]
+  ],
+  "es": [
+   [
+    "1. detección de método de validación con DNIe",
+    "que el ciudadano indica que posee DNI electrónico para identificarse",
+    "el sistema inicia el módulo de comprobación de identidad",
+    "el asistente pregunta si accede desde celular con lector NFC o computadora y ofrece instrucciones acordes al dispositivo"
+   ],
+   [
+    "2. alternativa ante falta de hardware especializado",
+    "que el usuario no dispone de lector físico de tarjetas para su computadora",
+    "manifiesta no poder insertar o leer el chip de su DNIe",
+    "el sistema habilita de inmediato la validación conversacional mediante preguntas oficiales de RENIEC sin frustrar el proceso"
+   ]
+  ]
+ },
+ {
+  "id": "HU-044",
+  "nombre": "Asistencia guiada por voz para trámites de extensión y gestión de RUC",
+  "desc": "Como contribuyente que busca extender o activar su Registro Único de Contribuyentes (RUC), quiero que el asistente me oriente de manera conversacional en los requisitos tributarios de SUNAT, para gestionar mi inscripción sin perderme en la complejidad del portal fiscal.",
+  "ca": [
+   [
+    "CA01",
+    "La plataforma traduce los conceptos tributarios (actividad económica, régimen fiscal, domicilio fiscal) a preguntas cotidianas y fáciles de entender."
+   ],
+   [
+    "CA02",
+    "El asistente valida verbalmente los datos del RUC y sugiere automáticamente el régimen más conveniente según la actividad descrita por el usuario."
+   ],
+   [
+    "CA03",
+    "Se genera una confirmación clara y descargable del estado del trámite de RUC con su número asignado o actualizado."
+   ]
+  ],
+  "es": [
+   [
+    "1. registro guiado de actividad tributaria",
+    "que el ciudadano desea extender su RUC para una nueva actividad económica",
+    "el asistente le consulta sobre la labor u oficio que realizará",
+    "el sistema asigna el código correspondiente de SUNAT y confirma en voz alta la actividad clasificada"
+   ],
+   [
+    "2. confirmación de datos fiscales",
+    "que se han completado los datos de domicilio y contacto tributario",
+    "el usuario revisa el resumen final por voz",
+    "el sistema lee los puntos clave y solicita una confirmación verbal definitiva antes de enviar el trámite oficial"
+   ]
+  ]
+ },
+ {
+  "id": "HU-045",
+  "nombre": "Desmitificación y simplificación de interfaces electrónicas estatales",
+  "desc": "Como ciudadano que desconfía de la falsa promesa de simplicidad de los portales del Estado, quiero que el asistente desmonte la complejidad de las interfaces gubernamentales, para operar mis trámites con transparencia, claridad y sin sorpresas de requisitos ocultos.",
+  "ca": [
+   [
+    "CA01",
+    "Antes de iniciar cualquier gestión, el sistema presenta un listado preliminar en audio y texto con el tiempo estimado y los 3 a 5 requisitos exactos necesarios."
+   ],
+   [
+    "CA02",
+    "Se eliminan todas las trampas visuales, enlaces engañosos y redirecciones a subsitios que complican las páginas estatales comunes."
+   ],
+   [
+    "CA03",
+    "La plataforma informa con honestidad y claridad si algún paso depende de una respuesta institucional externa y cuánto tardará dicha respuesta."
+   ]
+  ],
+  "es": [
+   [
+    "1. presentación transparente de requisitos previos",
+    "que el usuario selecciona realizar un trámite ante una entidad estatal",
+    "accede a la pantalla inicial del asistente",
+    "el sistema enumera verbalmente los documentos o datos que debe tener a la mano antes de presionar iniciar"
+   ],
+   [
+    "2. mantenimiento del entorno sin trampas visuales",
+    "que el trámite requiere consultar normativas o tablas de tasas",
+    "el usuario avanza en la interfaz",
+    "el sistema resuelve internamente la consulta sin enviarlo a portales externos desorientadores"
+   ]
+  ]
+ },
+ {
+  "id": "HU-046",
+  "nombre": "Fragmentación conversacional de requerimientos simultáneos",
+  "desc": "Como usuario que se desorienta cuando le exigen múltiples requisitos al mismo tiempo, quiero que el asistente desglose cada formulario masivo en preguntas dialogadas independientes, para responder calmadamente sin temor a omitir información.",
+  "ca": [
+   [
+    "CA01",
+    "Los formularios densos que contienen múltiples casillas simultáneas se descomponen en un cuestionario conversacional interactivo."
+   ],
+   [
+    "CA02",
+    "Tras cada respuesta ingresada por voz o selección simple, el asistente valida el dato y pasa automáticamente a la siguiente interrogante."
+   ],
+   [
+    "CA03",
+    "El sistema ofrece una opción de retroceso sencillo (\"volver al dato anterior\") en caso de que el usuario desee corregir una respuesta previa."
+   ]
+  ],
+  "es": [
+   [
+    "1. desglose de formulario extenso en diálogo",
+    "que un formulario administrativo cuenta con diez campos obligatorios",
+    "el ciudadano activa el modo guiado por voz",
+    "el sistema presenta diez interacciones individuales sucesivas, mostrando una sola pregunta en pantalla a la vez"
+   ],
+   [
+    "2. rectificación inmediata de un requerimiento",
+    "que el usuario se percata de una equivocación en el dato recientemente dictado",
+    "dice \"corregir anterior\" o presiona la flecha de retroceso",
+    "el sistema regresa a la pregunta inmediatamente previa manteniendo a salvo el resto de respuestas"
+   ]
+  ]
+ },
+ {
+  "id": "HU-047",
+  "nombre": "Modo de interacción accesible para personas no familiarizadas con entornos digitales",
+  "desc": "Como ciudadano con baja experiencia en aplicaciones digitales, quiero una interfaz con controles de alta visibilidad, lenguaje directo e instrucciones sonoras de acompañamiento, para gestionar trámites de forma autónoma sin depender de tramitadores o familiares.",
+  "ca": [
+   [
+    "CA01",
+    "Los botones de acción cuentan con dimensiones amplias (mínimo 44 px de altura), contraste WCAG AAA y etiquetas autoexplicativas (\"Continuar\", \"Escuchar de nuevo\", \"Hablar\")."
+   ],
+   [
+    "CA02",
+    "Todas las acciones críticas pueden ejecutarse indistintamente mediante comando de voz o toque táctil simple."
+   ],
+   [
+    "CA03",
+    "El asistente proporciona mensajes de refuerzo positivo y paciencia (\"Tómate tu tiempo, tus datos están guardados\") cuando detecta inactividad prolongada."
+   ]
+  ],
+  "es": [
+   [
+    "1. ejecución alternativa voz/táctil",
+    "que el usuario no sabe dónde hacer clic en una pantalla",
+    "escucha la indicación sonora del asistente",
+    "puede simplemente decir \"Sí, continuar\" o pulsar el botón principal de alto contraste para avanzar"
+   ],
+   [
+    "2. asistencia ante pausa prolongada",
+    "que el ciudadano permanece más de 45 segundos sin interactuar en una pantalla",
+    "el temporizador de inactividad se cumple",
+    "el asistente emite un mensaje cálido preguntando si necesita que le repita la instrucción o si requiere asistencia adicional"
+   ]
+  ]
+ },
+ {
+  "id": "HU-048",
+  "nombre": "Validación auditiva y confirmación progresiva de avance seguro",
+  "desc": "Como ciudadano temeroso de cometer errores debido a la confusión de los portales web, quiero que el asistente me confirme en voz alta cada dato registrado antes de procesarlo, para sentir absoluta seguridad de que mi trámite se completó correctamente.",
+  "ca": [
+   [
+    "CA01",
+    "Cada dato ingresado (número de documento, domicilio, teléfono, actividad) es repetido verbalmente por el asistente solicitando validación explícita del usuario."
+   ],
+   [
+    "CA02",
+    "Al finalizar el trámite, el sistema presenta y narra un resumen global consolidado antes del envío definitivo."
+   ],
+   [
+    "CA03",
+    "Tras el envío exitoso, el sistema emite una señal sonora de confirmación, muestra el número de expediente y lee el mensaje oficial de recepción."
+   ]
+  ],
+  "es": [
+   [
+    "1. confirmación auditiva de dato individual",
+    "que el usuario dicta su número de RUC o DNIe",
+    "el sistema procesa el reconocimiento de voz",
+    "el asistente responde: \"Has indicado [número dictado], ¿es correcto?\" y espera la confirmación afirmativa del ciudadano"
+   ],
+   [
+    "2. resumen consolidado previo al envío final",
+    "que el ciudadano ha completado todos los pasos atómicos del trámite",
+    "se alcanza la etapa de envío oficial",
+    "el sistema lee el resumen completo de la información y solicita una última confirmación antes de transmitir la solicitud al organismo público"
+   ]
+  ]
+ }
+]

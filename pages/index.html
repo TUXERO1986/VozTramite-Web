@@ -1,12 +1,393 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-texto="normal" data-contraste="normal" data-ligero="0" data-simple="0">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento Simple</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VozTrámite · Trámites del Estado conversando</title>
+  <meta name="description" content="Prepara tus trámites del Estado hablando o tocando, un paso a la vez y con palabras sencillas. Funciona con poca señal. No es un servicio oficial del Estado." />
+  <meta name="theme-color" content="#1740D1" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon-180.png" />
+  <link rel="preload" href="../assets/fonts/instrument-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-    <h1>Mi primer título</h1>
-    <p>I like big furrys ass and femboys >w<.</p>
+  <a class="skip-link" href="#/tramite" id="skip-asistente">Ir al asistente</a>
+
+  <!-- Biblioteca de íconos (trazo 2 px, remates redondeados, rejilla 24 px) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/><path d="M19 3v4M17 5h4"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+      <symbol id="i-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+      <symbol id="i-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></symbol>
+      <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v4M12 17.5v.5"/></symbol>
+      <symbol id="i-x-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-wifi-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M5.5 12.5a10 10 0 0 1 3-2M9 16a5 5 0 0 1 6 0M2 9a15 15 0 0 1 4-2.6M10 5.1A15 15 0 0 1 22 9"/><circle cx="12" cy="19" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+      <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6V3z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17v.5"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+      <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6M7 17H4v-7h16v7h-3"/><rect x="7" y="14" width="10" height="7"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+      <symbol id="i-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h11l3 3v15H5V3z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/></symbol>
+      <symbol id="i-id" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M5.5 16c.5-1.5 1.7-2 3-2s2.5.5 3 2M14 10h5M14 14h4"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12M2 21h20M9 21v-6h6v6M9 11h6"/></symbol>
+      <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a15 15 0 0 1-3.2 3.7M6.3 7.7A15 15 0 0 0 3 12s4 6 9 6a9 9 0 0 0 3.6-.8"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-accessibility" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.5"/><path d="M5 8l7 1.5L19 8M12 9.5V14M9 21l3-7 3 7"/></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V5zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7V5z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l13 8-13 8V4z"/></symbol>
+      <symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M3 10l9-6 9 6H3z"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v11h5v-6h4v6h5V10"/></symbol>
+      <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.8-5.5A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 8v4l3 2"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+      <symbol id="i-mic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M9 9v3a3 3 0 0 0 5 2.2M15 9.3V6a3 3 0 0 0-5.7-1.3M5 11a7 7 0 0 0 11.3 5.5M19 11a7 7 0 0 1-.6 2.8M12 18v3"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="shell">
+
+    <!-- ===================== BARRA LATERAL (desktop) · RIEL (tablet) · PESTAÑAS (móvil) -->
+    <aside class="side" aria-label="Navegación de VozTrámite">
+      <a class="brand" href="#/inicio" aria-label="VozTrámite, ir al inicio">
+        <img class="logo-full" src="../assets/images/voztramite-horizontal-fondo-claro.svg" alt="VozTrámite" width="150" height="34" />
+        <img class="logo-sym" src="../assets/images/voztramite-simbolo.svg" alt="" width="36" height="36" />
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#/inicio" data-nav="inicio" data-tip="Inicio" aria-label="Inicio" title="Inicio"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg><span class="lbl">Inicio</span></a>
+        <a href="#/tramite" data-nav="tramite" data-tip="Mi trámite" aria-label="Mi trámite" title="Mi trámite"><svg class="i" aria-hidden="true"><use href="#i-message"/></svg><span class="lbl">Mi trámite</span></a>
+        <a href="#/historial" data-nav="historial" data-tip="Historial" aria-label="Historial" title="Historial"><svg class="i" aria-hidden="true"><use href="#i-history"/></svg><span class="lbl">Historial</span></a>
+        <a href="#/conexion" data-nav="conexion" class="nav-ext" data-tip="Conexión" aria-label="Conexión" title="Conexión"><svg class="i" aria-hidden="true"><use href="#i-wifi"/></svg><span class="lbl">Conexión</span></a>
+        <a href="#/glosario" data-nav="glosario" data-tip="Glosario" aria-label="Glosario" title="Glosario"><svg class="i" aria-hidden="true"><use href="#i-book-open"/></svg><span class="lbl">Glosario</span></a>
+        <a href="#/ajustes" data-nav="ajustes" class="nav-ext" data-tip="Ajustes" aria-label="Ajustes" title="Ajustes"><svg class="i" aria-hidden="true"><use href="#i-sliders"/></svg><span class="lbl">Ajustes</span></a>
+        <a href="#/perfil" data-nav="perfil" class="nav-perfil" data-tip="Perfil" aria-label="Perfil" title="Perfil"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg><span class="lbl">Perfil</span></a>
+      </nav>
+      <div class="side-foot">
+        <span class="chip ok js-chip-conn" id="chip-conexion" role="status" data-hu="HU-008"><svg class="i" width="18" height="18"><use href="#i-wifi"/></svg><span class="ct">Conexión buena</span></span>
+        <a class="user-card" href="#/perfil" data-nav="perfil" data-tip="Mi perfil" id="user-card" aria-label="Mi perfil" title="Mi perfil"><span class="avatar" id="avatar-side" aria-hidden="true"></span><span class="uc-txt"><b id="uc-nombre">Mi perfil</b><small>Ver mi perfil</small></span></a>
+        <p class="proyecto">Proyecto académico · UPC · HCI for UX Design · Grupo 1</p>
+      </div>
+    </aside>
+
+    <div class="main-col">
+      <!-- ===================== BARRA SUPERIOR -->
+      <header class="site-header" data-hu="HU-033">
+        <a class="top-brand" href="#/inicio" aria-label="VozTrámite, ir al inicio"><img src="../assets/images/voztramite-horizontal-fondo-claro.svg" alt="VozTrámite" width="130" height="30" /></a>
+        <span class="top-title" id="top-title" aria-hidden="true">Inicio</span>
+        <div class="header-tools">
+          <a class="chip ok js-chip-conn" id="chip-conexion-top" href="#/conexion" aria-label="Conexión buena. Abrir Conexión"><svg class="i" width="18" height="18"><use href="#i-wifi"/></svg><span class="ct">Conexión buena</span></a>
+          <button class="btn btn-outline" id="btn-ajustes" type="button"><svg aria-hidden="true"><use href="#i-sliders"/></svg><span class="hide-sm">Ajustes de lectura</span><span class="sr-only">Ajustes</span></button>
+        </div>
+      </header>
+
+      <main id="contenido">
+
+        <!-- ================================================== #/inicio · D01 -->
+        <section class="view" data-view="inicio" id="vista-inicio" aria-labelledby="h-inicio">
+          <div class="view-in" style="--w:1040px">
+            <h1 id="h-inicio">Hola, ¿qué trámite quieres preparar hoy?</h1>
+            <p class="lead">Te acompaño paso a paso, con palabras sencillas. Responde con la voz o con el teclado, aunque tengas poca señal.</p>
+
+            <div class="card continuar" id="card-continuar" hidden data-hu="HU-032">
+              <span class="ico" aria-hidden="true"><svg><use href="#i-save"/></svg></span>
+              <div class="continuar-txt"><h2>Continúa donde quedaste</h2><p id="continuar-txt" class="muted"></p></div>
+              <div class="continuar-acc"><a class="btn btn-primary" href="#/tramite">Continuar</a><button class="btn btn-outline" type="button" data-acc="reiniciar-ir">Empezar de nuevo</button></div>
+            </div>
+
+            <h2 class="h-sec">Elige tu trámite</h2>
+            <ul class="tramites" id="lista-tramites"></ul>
+
+            <ul class="beneficios franja" aria-label="Por qué VozTrámite">
+              <li><span class="ico" aria-hidden="true"><svg><use href="#i-wifi-off"/></svg></span><span><b>Poca señal</b>Tu avance se guarda</span></li>
+              <li><span class="ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span><span><b>Privacidad</b>Tus datos son tuyos</span></li>
+              <li><span class="ico" aria-hidden="true"><svg><use href="#i-accessibility"/></svg></span><span><b>Letra grande</b>Y modo simple</span></li>
+              <li><span class="ico" aria-hidden="true"><svg><use href="#i-book-open"/></svg></span><span><b>Sin jerga</b>Glosario con ejemplos</span></li>
+            </ul>
+
+            <h2 class="h-sec">Cómo funciona</h2>
+            <ol class="steps" data-hu="HU-025">
+              <li><h3>Elige tu trámite</h3><p>Con tus palabras o de la lista.</p></li>
+              <li><h3>Verifica quién eres</h3><p>Una o dos preguntas sencillas.</p></li>
+              <li><h3>Responde tus datos</h3><p>Una pregunta a la vez.</p></li>
+              <li><h3>Recibe tu constancia</h3><p>Un código con lo que preparaste.</p></li>
+            </ol>
+
+            <p class="hero-note" data-hu="HU-016"><svg aria-hidden="true"><use href="#i-shield"/></svg><span>VozTrámite te orienta y prepara tu solicitud; <b>no reemplaza a la entidad</b>.</span></p>
+          </div>
+        </section>
+
+        <!-- ============================================ #/tramite · D02–D06 -->
+        <section class="view" data-view="tramite" id="vista-tramite" aria-labelledby="h-asist" hidden>
+          <div class="view-in" style="--w:1220px">
+            <h1 id="h-asist" class="vista-h1">Prepara tu trámite</h1>
+            <div id="asistente" class="app">
+              <!-- Izquierda: avance -->
+              <aside class="left" aria-label="Tu avance">
+                <div class="card" data-hu="HU-025">
+                  <h3>Tu avance</h3>
+                  <ol class="progreso" id="progreso"></ol>
+                  <div class="barra" aria-hidden="true"><i id="barra"></i></div>
+                </div>
+              </aside>
+
+              <!-- Centro: conversación -->
+              <div class="card conv" id="conv" aria-labelledby="conv-title">
+                <div class="conv-head">
+                  <span class="where" id="conv-title">Elige tu trámite</span>
+                  <span class="chip" id="chip-estado" role="status" aria-live="polite"><svg width="18" height="18"><use href="#i-mic"/></svg><span>Listo para escucharte</span></span>
+                </div>
+                <div class="conv-priv">
+                  <label class="switch" data-hu="HU-016"><span>Modo privado<small>Oculta tus datos en pantalla</small></span><input type="checkbox" id="sw-privado" /></label>
+                </div>
+                <div class="conv-body" id="conv-body" tabindex="-1" aria-live="polite"></div>
+                <div class="conv-foot">
+                  <button class="btn btn-primary btn-hablar grow" id="btn-hablar" aria-pressed="false" data-hu="HU-010"><svg><use href="#i-mic"/></svg><span id="btn-hablar-txt">Hablar</span></button>
+                  <div class="tools" role="group" aria-label="Herramientas de la conversación">
+                    <button class="tool" id="t-repetir" data-hu="HU-006"><svg><use href="#i-speaker"/></svg><span class="t">Repetir</span></button>
+                    <button class="tool" id="t-teclado" aria-pressed="false" data-hu="HU-039"><svg><use href="#i-keyboard"/></svg><span class="t">Teclado</span></button>
+                    <button class="tool" id="t-duda" data-hu="HU-030"><svg><use href="#i-message"/></svg><span class="t">Tengo una duda</span></button>
+                    <button class="tool" id="t-ayuda"><svg><use href="#i-help"/></svg><span class="t">Ayuda</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Derecha: lo que voy entendiendo, ayuda, privacidad -->
+              <aside class="right" aria-label="Lo que entiendo, ayuda y privacidad">
+                <div class="card" id="entendiendo-card">
+                  <h3>Lo que voy entendiendo</h3>
+                  <div id="entendiendo"></div>
+                </div>
+                <div class="card" id="ejemplo-card" data-hu="HU-027">
+                  <h3>Ejemplo para decir</h3>
+                  <p id="ejemplo" class="muted" style="margin:0"></p>
+                  <p style="margin:10px 0 0"><a href="#/glosario">¿Una palabra difícil? Abre el glosario</a></p>
+                </div>
+                <div class="card" id="card-preguntame" data-hu="HU-030">
+                  <h3>Pregúntame</h3>
+                  <p class="muted" style="margin:6px 0 10px">¿Algo no se entiende? Hazme una pregunta con tu voz o con el teclado.</p>
+                  <button class="btn btn-outline" id="btn-preguntame" type="button"><svg aria-hidden="true"><use href="#i-message"/></svg>Hacer una pregunta</button>
+                </div>
+                <div class="card" data-hu="HU-016">
+                  <h3>Antes de empezar</h3>
+                  <ul class="side-list">
+                    <li><svg aria-hidden="true"><use href="#i-mic"/></svg><span>Uso el micrófono solo cuando tocas <b>Hablar</b>.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-save"/></svg><span>Tu avance se guarda en este equipo.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-doc"/></svg><span>Yo preparo tu solicitud; tú decides dónde presentarla.</span></li>
+                  </ul>
+                  <button class="btn btn-ghost" id="btn-reiniciar" type="button" style="margin-top:8px"><svg aria-hidden="true"><use href="#i-repeat"/></svg>Empezar de nuevo</button>
+                </div>
+                <div class="card" data-hu="HU-011">
+                  <h3>Tu conexión</h3>
+                  <p id="conn-lado" style="margin:6px 0 0"></p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================= #/conexion · D07/D08 -->
+        <section class="view" data-view="conexion" id="vista-conexion" aria-labelledby="h-conn" hidden>
+          <div class="view-in" style="--w:980px">
+            <p class="eyebrow">Baja conectividad</p>
+            <h1 id="h-conn">Funciona aunque la señal falle</h1>
+            <p class="lead">Mide tu conexión, activa el modo ligero y sigue: tu avance se guarda en tu equipo y se retoma cuando vuelve la señal.</p>
+            <div class="grid-2">
+              <div class="card" data-hu="HU-008">
+                <h3>Diagnóstico rápido</h3>
+                <p class="muted">Mido cuánto tarda en cargar una imagen pequeña de esta página.</p>
+                <button class="btn btn-primary" id="btn-diag"><svg><use href="#i-wifi"/></svg>Medir mi conexión</button>
+                <div class="diag-result" id="diag-result" role="status" aria-live="polite"></div>
+              </div>
+              <div class="card" data-hu="HU-009">
+                <h3>Modo ligero y estado de red</h3>
+                <label class="switch"><span>Modo ligero<small>Sin imágenes pesadas ni animaciones</small></span><input type="checkbox" id="sw-ligero" /></label>
+                <p class="muted" style="margin:14px 0 4px">Prueba cómo funciona con otra señal:</p>
+                <div class="conn-grid" role="group" aria-label="Simular estado de conexión">
+                  <button class="btn btn-outline" data-conn="buena"><svg><use href="#i-wifi"/></svg>Buena</button>
+                  <button class="btn btn-outline" data-conn="regular"><svg><use href="#i-wifi"/></svg>Regular</button>
+                  <button class="btn btn-outline" data-conn="debil"><svg><use href="#i-wifi"/></svg>Débil</button>
+                  <button class="btn btn-outline" data-conn="sin"><svg><use href="#i-wifi-off"/></svg>Sin señal</button>
+                </div>
+                <p class="muted" style="margin:10px 0 0;font-size:var(--fs-cap)" id="conn-auto"></p>
+              </div>
+            </div>
+            <div class="card" id="conn-guardado-card" style="margin-top:24px" data-hu="HU-011">
+              <h3>Avance guardado y pendientes</h3>
+              <div id="conn-guardado"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================== #/glosario -->
+        <section class="view" data-view="glosario" id="vista-glosario" aria-labelledby="h-glos" hidden>
+          <div class="view-in" style="--w:860px">
+            <p class="eyebrow">Palabras sencillas</p>
+            <h1 id="h-glos">Glosario de términos del trámite</h1>
+            <p class="lead">Si una palabra del Estado no se entiende, aquí la explico con un ejemplo de la vida diaria.</p>
+            <div class="card" style="margin-top:24px" data-hu="HU-023">
+              <div class="campo" style="margin:0">
+                <label for="glos-q">Buscar un término</label>
+                <input id="glos-q" type="search" placeholder="Por ejemplo: captcha, constancia, DNI electrónico" autocomplete="off" />
+              </div>
+              <ul class="glos-list" id="glos-list"></ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================== #/historial -->
+        <section class="view" data-view="historial" id="vista-historial" aria-labelledby="h-hist" hidden>
+          <div class="view-in" style="--w:820px">
+            <p class="eyebrow">Mis trámites</p>
+            <h1 id="h-hist">Historial</h1>
+            <p class="lead">Aquí ves lo que estás preparando y lo que ya dejaste listo. Todo se guarda solo en este equipo.</p>
+            <div class="seg hist-filtros" id="hist-filtros" role="group" aria-label="Filtrar trámites" hidden>
+              <button type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+              <button type="button" data-filtro="curso" aria-pressed="false">En curso</button>
+              <button type="button" data-filtro="preparados" aria-pressed="false">Preparados</button>
+            </div>
+            <div id="hist-lista"></div>
+          </div>
+        </section>
+
+        <!-- ===================================================== #/perfil -->
+        <section class="view" data-view="perfil" id="vista-perfil" aria-labelledby="h-perfil" hidden>
+          <div class="view-in" style="--w:720px">
+            <h1 id="h-perfil">Mi perfil</h1>
+            <div class="card perfil-cab">
+              <span class="avatar avatar-lg" id="avatar-perfil" aria-hidden="true"></span>
+              <form id="form-perfil" class="perfil-form" novalidate>
+                <div class="campo" style="margin:0">
+                  <label for="perfil-nombre">¿Cómo quieres que te llame?</label>
+                  <input id="perfil-nombre" name="nombre" type="text" maxlength="30" autocomplete="given-name" placeholder="Por ejemplo: Rosa" aria-describedby="perfil-ayuda" />
+                  <span class="hint" id="perfil-ayuda">Solo se usa para saludarte. No se envía a ningún sitio.</span>
+                </div>
+                <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-save"/></svg>Guardar nombre</button>
+              </form>
+            </div>
+            <p class="muted" id="perfil-msg" role="status" aria-live="polite" style="margin:8px 4px 0;min-height:1.5em"></p>
+
+            <div class="card" style="margin-top:16px">
+              <h2 class="h-card">Mis preferencias</h2>
+              <dl class="prefs" id="perfil-prefs"></dl>
+              <a class="btn btn-outline" href="#/ajustes"><svg aria-hidden="true"><use href="#i-sliders"/></svg>Cambiar en Ajustes</a>
+            </div>
+
+            <div class="accesos" style="margin-top:16px">
+              <a class="card acceso" href="#/historial"><span class="ico" aria-hidden="true"><svg><use href="#i-history"/></svg></span><span><b>Mi historial</b><small>Tus trámites en curso y preparados</small></span></a>
+              <a class="card acceso" href="#/conexion"><span class="ico" aria-hidden="true"><svg><use href="#i-wifi"/></svg></span><span><b>Conexión</b><small>Mide tu señal y usa el modo ligero</small></span></a>
+            </div>
+
+            <div class="card" style="margin-top:16px" data-hu="HU-016">
+              <h2 class="h-card"><svg aria-hidden="true" class="h-ic"><use href="#i-shield"/></svg>Privacidad</h2>
+              <p style="margin:0 0 6px"><b>Tus datos se guardan solo en este equipo.</b></p>
+              <p class="muted">Tu nombre, tu avance y tu historial viven en este navegador. No se envían a ningún servidor y puedes borrarlos cuando quieras.</p>
+              <button class="btn btn-danger" id="btn-borrar" type="button"><svg aria-hidden="true"><use href="#i-trash"/></svg>Borrar mis datos y mi historial</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =================================================== #/ajustes · D09 -->
+        <section class="view" data-view="ajustes" id="vista-ajustes" aria-labelledby="h-ajustes" hidden>
+          <div class="view-in" style="--w:640px">
+            <h1 id="h-ajustes">Ajustes de lectura</h1>
+            <p class="lead">Haz que la página se lea y se escuche como te resulte más cómodo.</p>
+            <div class="card" id="panel-ajustes">
+              <div id="ajuste-texto-lab" class="muted">Tamaño del texto</div>
+              <div class="seg" role="group" aria-labelledby="ajuste-texto-lab">
+                <button data-texto="normal" aria-pressed="true">Normal</button>
+                <button data-texto="grande" aria-pressed="false">Grande</button>
+                <button data-texto="muygrande" aria-pressed="false">Muy grande</button>
+              </div>
+              <div id="ajuste-contr-lab" class="muted">Contraste</div>
+              <div class="seg" role="group" aria-labelledby="ajuste-contr-lab">
+                <button data-contraste="normal" aria-pressed="true">Normal</button>
+                <button data-contraste="alto" aria-pressed="false">Alto</button>
+              </div>
+              <label class="switch" data-hu="HU-047"><span>Modo simple<small>Una sola columna y letra más grande</small></span><input type="checkbox" id="sw-simple" /></label>
+              <label class="switch"><span>Voz del asistente<small>Lee en voz alta cada pregunta</small></span><input type="checkbox" id="sw-voz" checked /></label>
+            </div>
+            <div class="card" id="card-voz" style="margin-top:16px" data-hu="HU-010">
+              <h2 class="h-card">Probar voz</h2>
+              <p class="muted" style="margin-top:0">Comprueba que el micrófono y la lectura en voz alta funcionan en este navegador.</p>
+              <div class="prueba-btns">
+                <button class="btn btn-primary" id="btn-probar-mic" type="button"><svg aria-hidden="true"><use href="#i-mic"/></svg><span id="btn-probar-mic-txt">Probar micrófono</span></button>
+                <button class="btn btn-outline" id="btn-probar-voz" type="button"><svg aria-hidden="true"><use href="#i-speaker"/></svg>Probar cómo te hablo</button>
+              </div>
+              <div class="campo" id="voz-sel-wrap" data-hu="HU-010">
+                <label for="sel-voz">Voz del asistente</label>
+                <select id="sel-voz"></select>
+                <button class="btn btn-outline" id="btn-escuchar-voz" type="button"><svg aria-hidden="true"><use href="#i-speaker"/></svg>Escuchar esta voz</button>
+                <div id="voz-msg" role="status" aria-live="polite"></div>
+              </div>
+              <div id="prueba-res" role="status" aria-live="polite"></div>
+              <h3 class="h-mini">Compatibilidad de este navegador</h3>
+              <ul class="compat" id="compat-voz"></ul>
+            </div>
+            <div class="card" id="card-ia" style="margin-top:16px" data-hu="HU-030">
+              <h2 class="h-card">Asistente con IA</h2>
+              <p class="muted" style="margin-top:0">Si está conectado, entiende mejor lo que dices al elegir el trámite y responde tus dudas. Nunca recibe tus datos personales.</p>
+              <span class="chip" id="ia-estado" role="status"></span>
+              <div class="prueba-btns" style="margin-top:12px"><button class="btn btn-outline" id="btn-probar-ia" type="button"><svg aria-hidden="true"><use href="#i-sparkles"/></svg>Probar IA</button></div>
+              <div id="ia-res" role="status" aria-live="polite"></div>
+            </div>
+            <p class="muted creditos">Tipografía Instrument Sans (SIL OFL 1.1). Tus datos se guardan solo en tu navegador.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Aviso accesible al final de cada vista (tablet y móvil; en desktop vive en la barra lateral) -->
+      <footer class="view-foot">
+        <p class="proyecto">Tus datos se guardan solo en tu navegador. La constancia es solo de orientación.</p>
+        <p class="proyecto">Proyecto académico · UPC · HCI for UX Design · Grupo 1</p>
+      </footer>
+    </div>
+  </div>
+
+  <dialog class="dlg" id="dlg-resumen" aria-labelledby="dlg-resumen-t" data-hu="HU-016">
+    <div class="dlg-in">
+      <h2 id="dlg-resumen-t">Resumen de tu solicitud</h2>
+      <dl class="dlg-dl" id="dlg-resumen-dl"></dl>
+      <p class="muted" id="dlg-resumen-nota" style="font-size:var(--fs-cap)"></p>
+      <div class="dlg-acc">
+        <button class="btn btn-outline" id="dlg-resumen-oir" type="button"><svg aria-hidden="true"><use href="#i-speaker"/></svg>Escuchar resumen</button>
+        <button class="btn btn-primary" id="dlg-resumen-cerrar" type="button">Cerrar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="dlg" id="dlg-borrar" aria-labelledby="dlg-borrar-t" aria-describedby="dlg-borrar-d">
+    <div class="dlg-in">
+      <h2 id="dlg-borrar-t">¿Borrar tus datos y tu historial?</h2>
+      <p id="dlg-borrar-d">Se borrarán tu nombre, tu avance, tus ajustes y los trámites preparados de este equipo. No se puede deshacer.</p>
+      <div class="dlg-acc">
+        <button class="btn btn-outline" id="dlg-borrar-no" type="button" autofocus>Cancelar</button>
+        <button class="btn btn-danger" id="dlg-borrar-si" type="button"><svg aria-hidden="true"><use href="#i-trash"/></svg>Sí, borrar todo</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="sr-only" id="live" aria-live="assertive" role="alert"></div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/assistant.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
